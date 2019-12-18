@@ -17,6 +17,7 @@
 
         html.removeClass('no-js').addClass('js');
 
+        dropdownPhone();
         scrollToElement();
         sidebarAccordion();
         reviews('.js-reviews');
@@ -38,6 +39,30 @@
             }
         });
     });
+
+    /**
+     * Dropdown Phone
+     *
+     * @example
+     * dropdownPhone();
+     *
+     * @returns {void}
+     */
+    const dropdownPhone = () => {
+        const dropDownBtn = $('.js-dropdown');
+        const dropDownList = $('.js-phone-list');
+
+        dropDownBtn.on('click', function () {
+            $(this).toggleClass('active').siblings('.js-phone-list').fadeToggle(300);
+        });
+
+        $(document).on('click', (event) => {
+            if ($(event.target).closest('.js-dropdown, .js-phone-list').length) return;
+
+            dropDownList.fadeOut(300);
+            dropDownBtn.removeClass('active');
+        });
+    };
 
     /**
      * Stick Footer
@@ -123,11 +148,9 @@
             /*element.on('swipe', (slick, direction) => {
                 console.log(slick, direction);
             });
-
             element.on('afterChange', (slick, currentSlide) => {
                 console.log(slick, currentSlide);
             });
-
             element.on('beforeChange', (slick, currentSlide, nextSlide) => {
                 console.log(slick, currentSlide, nextSlide);
             });*/
@@ -152,17 +175,14 @@
             close = $(closeTrigger),
             hamburger = $(hamburgerElement),
             menuAll = hamburger.add(menu);
-
         hamburger.add(close).on('click', () => {
             menu.toggleClass('is-active');
         });
-
         $(window).on('load', (event) => {
             if (document.location.hash !== '') {
                 scrollToElement(document.location.hash);
             }
         });
-
         $(window).on('click', (e) => {
             if (!$(e.target).closest(menuAll).length) {
                 menu.removeClass('is-active');
@@ -178,22 +198,16 @@
      */
     /*const scrollHandlerForButton = (elements) => {
         elements = $(elements);
-
         let i, el;
-
         for (i = 0; i < elements.length; i++) {
-
             el = elements.eq(i);
-
             el.on('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
-
                 scrollToElement($(e.target.hash), () => {
                     document.location.hash = e.target.hash;
                 });
             });
-
         }
     };*/
 
