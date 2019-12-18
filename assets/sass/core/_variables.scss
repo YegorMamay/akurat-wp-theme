@@ -2,10 +2,25 @@ $debug: false !default;
 $image-url-path: "assets/img/" !default;
 $font-url-path: "assets/fonts/" !default;
 
-$borderRadius: 0;
+$borderRadius: 25px;
 $shadow: 0 0 10px rgba(#000, .2);
+$primary_color_1: #fff;
+$primary_color_2: #000;
+$accent_color: #fae10b;
+$accent_color_2: #a1e1f7;
+$accent_color_3: #4a8db2;
+$light_border_color: #eaedf5;
+$modal_shadow: 0 4px 12px 1px rgba(lighten($primary_color_2, 15%), .2);
+$primary_button_color: $accent_color;
+$secondary_button_color: $accent_color_2;
+$button_shadow_color: 0 0 12px 0 rgba(lighten($primary_color_2, 15%), .2);
+$light_text_color: rgba(27, 29, 30, 0.57);
+$text_date_color: rgba(255, 255, 255, 0.42);
 
-// BRAND
+
+
+
+  // BRAND
 $themeColorOne: #1b1d1e; // Обычно самый темный цвет. Используется для:
 // заголовков h1-h6 - $titleFontColor и других. 
 
@@ -32,8 +47,8 @@ $textHighlightColor: #fff;
 // MENU
 $menuBgColor: $themeColorOne;
 $menuBgColorActive: $themeColorTwo;
-$menuFontColor: #fff;
-$menuFontColorActive: #fff;
+$menuFontColor: $themeColorOne;
+$menuFontColorActive: $themeColorOne;
 
 $navArrowColor: #fff;
 $navHeaderMobileBGColor: $themeColorOne;
@@ -58,7 +73,7 @@ $menu-close-color: #fff;
 $menuContainerMobilePaddingTop: 30%;
 
 // FOOTER
-$footerBgColor: $themeColorOne;
+$footerBgColor: $themeColorTwo;
 $footerFontColor: #fff;
 $footerLinkColorActive: darken($footerFontColor, 5%);
 

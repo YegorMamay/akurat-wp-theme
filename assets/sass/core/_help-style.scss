@@ -133,7 +133,7 @@ em {
 }
 
 //xs 544
-@media #{$mobile} {
+@media screen and (max-width: 1140px) {
     .hide-on-mobile {
         display: none !important;
     }

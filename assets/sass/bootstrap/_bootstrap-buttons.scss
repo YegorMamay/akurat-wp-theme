@@ -1,7 +1,7 @@
 $theme-colors: () !default;
 $theme-colors: map-merge((
-    'primary': $themeColorOne,
-    'secondary': $themeColorTwo,
+    'primary': $primary_button_color,
+    'secondary': $secondary_button_color,
 ), $theme-colors);
 
 $yiq-contrasted-threshold: 150 !default;
@@ -30,10 +30,10 @@ $btn-enable-rounded: true !default;
 $btn-enable-shadows: false !default;
 $btn-enable-gradients: false !default;
 
-$btn-padding-y: 6px !default;
-$btn-padding-x: 12px !default;
-$btn-font-size: 16px !default;
-$btn-line-height: 1.5 !default;
+$btn-padding-y: 16px !default;
+$btn-padding-x: 30px !default;
+$btn-font-size: 13px !default;
+$btn-line-height: normal !default;
 
 $btn-padding-y-sm: 4px !default;
 $btn-padding-x-sm: 8px !default;
@@ -47,12 +47,12 @@ $btn-line-height-lg: 1.5 !default;
 
 $btn-border-width: 1px !default;
 
-$btn-font-weight: 400 !default;
+$btn-font-weight: 700 !default;
 $btn-box-shadow: inset 0 1px 0 rgba(#fff, .15), 0 1px 1px rgba(#000, .075) !default;
 $btn-focus-width: 0 !default;
-$btn-focus-box-shadow: 0 0 0 3px rgba(theme-color('primary'), .25) !default;
+$btn-focus-box-shadow: none !default;
 $btn-disabled-opacity: .65 !default;
-$btn-active-box-shadow: inset 0 3px 5px rgba(#000, .125) !default;
+$btn-active-box-shadow: none !default;
 
 $btn-link-disabled-color: #6c757d !default;
 
@@ -77,10 +77,11 @@ $btn-link-hover-decoration: underline !default;
     white-space: nowrap;
     vertical-align: middle;
     user-select: none;
-    border: $btn-border-width solid transparent;
+    border: none;
     padding: $btn-padding-y $btn-padding-x;
     font-size: $btn-font-size;
     line-height: $btn-line-height;
+    @extend %smooth_animation;
     @if $btn-enable-rounded {
         border-radius: $btn-border-radius;
     } @else {
@@ -91,6 +92,7 @@ $btn-link-hover-decoration: underline !default;
     &:hover,
     &:focus {
         text-decoration: none;
+        box-shadow: $button_shadow_color;
     }
 
     &:focus,
@@ -129,10 +131,10 @@ fieldset:disabled a.btn {
     .btn-#{$name} {
         $background: $value;
         $border: $value;
-        $hover-background: darken($background, 7.5%);
-        $hover-border: darken($border, 10%);
-        $active-background: darken($background, 10%);
-        $active-border: darken($border, 12.5%);
+        $hover-background: lighten($background, 15%);
+        $hover-border: lighten($border, 15%);
+        $active-background: lighten($background, 15%);
+        $active-border: lighten($border, 15%);
         color: color-yiq($background);
         @if $btn-enable-gradients {
             background: $background linear-gradient(180deg, mix(#fff, $background, 15%), $background) repeat-x;
@@ -175,6 +177,7 @@ fieldset:disabled a.btn {
         &:not(:disabled):not(.disabled).active {
             color: color-yiq($active-background);
             background-color: $active-background;
+            transform: scale(0.95);
             @if $btn-enable-gradients {
                 background-image: none;
             }
@@ -302,8 +305,8 @@ fieldset:disabled a.btn {
 
 @media (max-width: 1024px) {
     .btn {
-        padding: 6px 12px;
-        font-size: 15px;
+        padding: 12px 20px;
+        font-size: 13px;
     }
 
     .btn-sm {
@@ -319,8 +322,8 @@ fieldset:disabled a.btn {
 
 @media (max-width: 768px) {
     .btn {
-        padding: 4px 10px;
-        font-size: 14px;
+        padding: 12px 20px;
+        font-size: 13px;
     }
 
     .btn-sm {
@@ -336,7 +339,7 @@ fieldset:disabled a.btn {
 
 @media (max-width: 544px) {
     .btn {
-        padding: 4px 10px;
+        padding: 12px 18px;
         font-size: 12px;
     }
 
