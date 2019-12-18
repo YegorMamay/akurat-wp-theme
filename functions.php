@@ -43,5 +43,40 @@ add_action( 'after_setup_theme', function () {
         pll_register_string( 'social-google-plus', 'Google Plus', 'Brainworks' );
         pll_register_string( 'social-odnoklassniki', 'Odnoklassniki', 'Brainworks' );
         pll_register_string( 'call_back_text', 'call_back_text', 'Brainworks' );
+        pll_register_string( 'button_info', 'button_info', 'Brainworks' );
     }
 } );
+
+//Преимущества
+add_action('init', 'my_custom_benefits');
+function my_custom_benefits(){
+    register_post_type('benefits', array(
+        'labels'             => array(
+            'name'               => 'Преимущества',
+            'singular_name'      => 'Преимущество',
+            'add_new'            => 'Добавить',
+            'add_new_item'       => 'Добавить новый блок',
+            'edit_item'          => 'Редактировать блок',
+            'new_item'           => 'Новый блок',
+            'view_item'          => 'Посмотреть блок',
+            'search_items'       => 'Найти блок',
+            'not_found'          =>  'Блоков не найдено',
+            'not_found_in_trash' => 'В корзине блоков не найдено',
+            'parent_item_colon'  => '',
+            'menu_name'          => 'Преимущества'
+
+        ),
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => true,
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'supports'           => array('title', 'editor')
+    ) );
+}
+

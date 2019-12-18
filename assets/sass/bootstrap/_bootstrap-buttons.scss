@@ -81,6 +81,7 @@ $btn-link-hover-decoration: underline !default;
     padding: $btn-padding-y $btn-padding-x;
     font-size: $btn-font-size;
     line-height: $btn-line-height;
+    text-transform: uppercase;
     @extend %smooth_animation;
     @if $btn-enable-rounded {
         border-radius: $btn-border-radius;
