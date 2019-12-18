@@ -12,7 +12,6 @@
             html.addClass("is-mobile");
         }
         html.removeClass("no-js").addClass("js");
-        dropdownPhone();
         scrollToElement();
         sidebarAccordion();
         reviews(".js-reviews");
@@ -23,7 +22,7 @@
         }
         stickFooter(".js-footer", ".js-container");
         anotherHamburgerMenu(".js-menu", ".js-hamburger", ".js-menu-close");
-        buyOneClick(".one-click", '[data-field-id="field11"]', "h1.single-title");
+        buyOneClick(".one-click", '[data-field-id="field7"]', "h1.page-name");
         $d.on("copy", addLink);
         $w.on("resize", function() {
             if ($w.innerWidth() >= 630) {
@@ -31,18 +30,6 @@
             }
         });
     });
-    var dropdownPhone = function dropdownPhone() {
-        var dropDownBtn = $(".js-dropdown");
-        var dropDownList = $(".js-phone-list");
-        dropDownBtn.on("click", function() {
-            $(this).toggleClass("active").siblings(".js-phone-list").fadeToggle(300);
-        });
-        $(document).on("click", function(event) {
-            if ($(event.target).closest(".js-dropdown, .js-phone-list").length) return;
-            dropDownList.fadeOut(300);
-            dropDownBtn.removeClass("active");
-        });
-    };
     var stickFooter = function stickFooter(footer, container) {
         var previousHeight, currentHeight;
         var offset = 0;
@@ -178,21 +165,18 @@
         var animationSpeed = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 400;
         var links = $("a");
         links.each(function(index, element) {
-            var element$ = $(element), href = element$.attr("href");
-            if (href) {
-                if ((href[0] === "#" || href.slice(0, 2) === "/#") && !(href.slice(1, 3) === "__")) {
-                    element$.on("click", function(e) {
-                        e.preventDefault();
-                        var target$ = $(href[0] === "#" ? href : href.slice(1));
-                        if (target$.length) {
-                            $("html, body").animate({
-                                scrollTop: target$.offset().top
-                            }, animationSpeed);
-                        } else if (href[0] === "/") {
-                            location.href = href;
-                        }
-                    });
-                }
+            var $element = $(element), href = $element.attr("href");
+            if (href[0] === "#" || href[0] + href[1] === "/#") {
+                $element.on("click", function(e) {
+                    e.preventDefault();
+                    var adaptiveHref = href[0] === "#" ? href : href.slice(1);
+                    var el = $(adaptiveHref);
+                    if (el.length) {
+                        $("html, body").animate({
+                            scrollTop: el.offset().top
+                        }, animationSpeed);
+                    }
+                });
             }
         });
     };

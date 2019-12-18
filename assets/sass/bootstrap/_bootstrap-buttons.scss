@@ -1,12 +1,12 @@
-$theme-colors: ();
+$theme-colors: () !default;
 $theme-colors: map-merge((
     'primary': $themeColorOne,
     'secondary': $themeColorTwo,
 ), $theme-colors);
 
-$yiq-contrasted-threshold: 150;
-$yiq-text-dark: #212529;
-$yiq-text-light: #fff;
+$yiq-contrasted-threshold: 150 !default;
+$yiq-text-dark: #212529 !default;
+$yiq-text-light: #fff !default;
 
 @function theme-color($key: 'primary') {
     @return map-get($theme-colors, $key);
@@ -26,48 +26,48 @@ $yiq-text-light: #fff;
     }
 }
 
-$btn-enable-rounded: true;
-$btn-enable-shadows: true;
-$btn-enable-gradients: false;
+$btn-enable-rounded: true !default;
+$btn-enable-shadows: false !default;
+$btn-enable-gradients: false !default;
 
-$btn-padding-y: 10px;
-$btn-padding-x: 40px;
-$btn-font-size: 16px;
-$btn-line-height: 1.5;
+$btn-padding-y: 6px !default;
+$btn-padding-x: 12px !default;
+$btn-font-size: 16px !default;
+$btn-line-height: 1.5 !default;
 
-$btn-padding-y-sm: 7px;
-$btn-padding-x-sm: 20px;
-$btn-font-size-sm: ($btn-font-size * .875);
-$btn-line-height-sm: 1.5;
+$btn-padding-y-sm: 4px !default;
+$btn-padding-x-sm: 8px !default;
+$btn-font-size-sm: ($btn-font-size * .875) !default;
+$btn-line-height-sm: 1.5 !default;
 
-$btn-padding-y-lg: 10px;
-$btn-padding-x-lg: 60px;
-$btn-font-size-lg: ($btn-font-size * 1.25);
-$btn-line-height-lg: 1.5;
+$btn-padding-y-lg: 8px !default;
+$btn-padding-x-lg: 16px !default;
+$btn-font-size-lg: ($btn-font-size * 1.25) !default;
+$btn-line-height-lg: 1.5 !default;
 
-$btn-border-width: 1px;
+$btn-border-width: 1px !default;
 
-$btn-font-weight: 400;
-$btn-box-shadow: $shadow;
-$btn-focus-width: 0;
-$btn-focus-box-shadow: 0 0 0 3px rgba(theme-color('primary'), .25);
-$btn-disabled-opacity: .65;
-$btn-active-box-shadow: inset 0 3px 5px rgba(#000, .125);
+$btn-font-weight: 400 !default;
+$btn-box-shadow: inset 0 1px 0 rgba(#fff, .15), 0 1px 1px rgba(#000, .075) !default;
+$btn-focus-width: 0 !default;
+$btn-focus-box-shadow: 0 0 0 3px rgba(theme-color('primary'), .25) !default;
+$btn-disabled-opacity: .65 !default;
+$btn-active-box-shadow: inset 0 3px 5px rgba(#000, .125) !default;
 
-$btn-link-disabled-color: #6c757d;
+$btn-link-disabled-color: #6c757d !default;
 
-$btn-block-spacing-y: 8px;
+$btn-block-spacing-y: 8px !default;
 
 $btn-border-radius: $borderRadius;
 $btn-border-radius-lg: $borderRadius;
 $btn-border-radius-sm: $borderRadius;
 
-$btn-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+$btn-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 
-$btn-link-color: theme-color('primary');
-$btn-link-decoration: none;
-$btn-link-hover-color: darken($btn-link-color, 15%);
-$btn-link-hover-decoration: underline;
+$btn-link-color: theme-color('primary') !default;
+$btn-link-decoration: none !default;
+$btn-link-hover-color: darken($btn-link-color, 15%) !default;
+$btn-link-hover-decoration: underline !default;
 
 .btn {
     display: inline-block;
@@ -302,51 +302,51 @@ fieldset:disabled a.btn {
 
 @media (max-width: 1024px) {
     .btn {
-        padding: 7px 28px;
+        padding: 6px 12px;
         font-size: 15px;
     }
 
     .btn-sm {
-        padding: 6px 18px;
+        padding: 4px 8px;
         font-size: 13px;
     }
 
     .btn-lg {
-        padding: 9px 55px;
+        padding: 8px 16px;
         font-size: 18px;
     }
 }
 
 @media (max-width: 768px) {
     .btn {
-        padding: 6px 26px;
+        padding: 4px 10px;
         font-size: 14px;
     }
 
     .btn-sm {
-        padding: 5px 16px;
+        padding: 3px 8px;
         font-size: 12px;
     }
 
     .btn-lg {
-        padding: 8px 50px;
+        padding: 6px 14px;
         font-size: 16px;
     }
 }
 
 @media (max-width: 544px) {
     .btn {
-        padding: 5px 24px;
+        padding: 4px 10px;
         font-size: 12px;
     }
 
     .btn-sm {
-        padding: 4px 14px;
-        font-size: 12px;
+        padding: 3px 8px;
+        font-size: 10px;
     }
 
     .btn-lg {
-        padding: 7px 40px;
+        padding: 6px 14px;
         font-size: 14px;
     }
 }

@@ -17,7 +17,6 @@
 
         html.removeClass('no-js').addClass('js');
 
-        dropdownPhone();
         scrollToElement();
         sidebarAccordion();
         reviews('.js-reviews');
@@ -39,30 +38,6 @@
             }
         });
     });
-
-    /**
-     * Dropdown Phone
-     *
-     * @example
-     * dropdownPhone();
-     *
-     * @returns {void}
-     */
-    const dropdownPhone = () => {
-        const dropDownBtn = $('.js-dropdown');
-        const dropDownList = $('.js-phone-list');
-
-        dropDownBtn.on('click', function () {
-            $(this).toggleClass('active').siblings('.js-phone-list').fadeToggle(300);
-        });
-
-        $(document).on('click', (event) => {
-            if ($(event.target).closest('.js-dropdown, .js-phone-list').length) return;
-
-            dropDownList.fadeOut(300);
-            dropDownBtn.removeClass('active');
-        });
-    };
 
     /**
      * Stick Footer

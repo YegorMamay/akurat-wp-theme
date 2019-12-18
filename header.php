@@ -6,24 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?> - <?php bloginfo('description'); ?>">
-
-    <!-- OpenGraph -->
-    <meta property="og:locale" content="ru_RU" />
-    <meta property="og:locale:alternate" content="ru_RU" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="<?php if ( is_front_page() ) {echo bloginfo('name');} else { echo single_post_title(); } ?>" />
-    <meta property="og:description" content="<?php bloginfo('description'); ?>">
-    <meta property="og:url" content="<?php echo esc_url(site_url()); ?>" />
-    <meta property="og:site_name" content="<?php bloginfo('name'); ?>" />
-    <meta property="og:image" content="<?php echo esc_url(the_post_thumbnail_url()); ?>" />
-    <meta property="og:image:secure_url" content="<?php echo esc_url(the_post_thumbnail_url()); ?>" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="628" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="<?php bloginfo('name'); ?> | <?php bloginfo('description'); ?>" />
-    <meta name="twitter:image" content="<?php echo esc_url(the_post_thumbnail_url()); ?>" />
-    <!-- OpenGraph end-->
-
     <link rel="shortcut icon" href="<?php echo esc_url(get_template_directory_uri() . '/assets/img/favicon.ico'); ?>"
           type="image/x-icon">
     <link rel="icon" href="<?php echo esc_url(get_template_directory_uri() . '/assets/img/favicon.ico'); ?>"
@@ -52,20 +34,28 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
-                    <?php if (has_nav_menu('main-nav')) { ?>
-                        <nav class="nav js-menu">
-                            <button type="button" tabindex="0" class="menu-item-close menu-close js-menu-close"></button>
-                            <?php wp_nav_menu(array(
-                            'theme_location' => 'main-nav',
-                            'container' => false,
-                            'menu_class' => 'menu-container',
-                            'menu_id' => '',
-                            'fallback_cb' => 'wp_page_menu',
-                            'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                            'depth' => 3
+                    <?php if (function_exists('pll_the_languages')) { ?>
+                        <ul class="lang">
+                            <?php pll_the_languages(array(
+                                'show_flags' => 0,
+                                'show_names' => 1,
+                                'hide_if_empty' => 0,
+                                'display_names_as' => 'name'
                             )); ?>
-                        </nav>
+                        </ul>
                     <?php } ?>
+
+                    <?php $work_schedule = get_theme_mod('bw_additional_work_schedule');
+                    if (!empty($work_schedule )) { ?>
+                        <?php echo $work_schedule ; ?>
+                    <?php } ?>
+
+                    <?php echo do_shortcode('[bw-social]'); ?>
+
+                    <?php echo do_shortcode('[bw-messengers]'); ?>
+
+                    <?php echo do_shortcode('[bw-phone]'); ?>
+
                 </div>
                 <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
                     <button type="button" class="btn btn-secondary btn-block <?php the_lang_class('js-call-back'); ?>">
@@ -73,8 +63,25 @@
                     </button>
                 </div>
             </div>
+            <div class="row">
+                <?php if (has_nav_menu('main-nav')) { ?>
+                    <nav class="nav js-menu">
+                        <button type="button" tabindex="0" class="menu-item-close menu-close js-menu-close"></button>
+                        <?php wp_nav_menu(array(
+                            'theme_location' => 'main-nav',
+                            'container' => false,
+                            'menu_class' => 'menu-container',
+                            'menu_id' => '',
+                            'fallback_cb' => 'wp_page_menu',
+                            'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                            'depth' => 3
+                        )); ?>
+                    </nav>
+                <?php } ?>
+            </div>
         </div>
     </header>
+    
 
     <!-- Mobile menu start-->
     <div class="nav-mobile-header">
@@ -85,6 +92,7 @@
         </button>
         <div class="logo"><?php get_default_logo_link(); ?></div>
     </div>
+
     <?php if (has_nav_menu('main-nav')) { ?>
         <nav class="nav js-menu hide-on-desktop">
             <button type="button" tabindex="0" class="menu-item-close menu-close js-menu-close"></button>

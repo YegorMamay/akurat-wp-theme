@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
-<div class="container">
 <?php if (function_exists('kama_breadcrumbs')) kama_breadcrumbs(' » '); ?>
+<div class="container">
 <div class="row">
     <div class="col-12 col-md-8">
         <h1 class="text-center"><?php post_type_archive_title(); ?></h1>

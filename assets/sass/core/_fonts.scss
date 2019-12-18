@@ -1,14 +1,20 @@
-//@font-face {
-//    font-family: 'UniSansBook';
-//    src: url("assets/fonts/UniSansBook.ttf")
-//}
+@font-face {
+  font-family: 'Circe';
+  src: url("assets/fonts/Circe-Regular.ttf");
+  font-style: normal;
+  font-weight: normal;
+}
 
-//@import url('https://fonts.googleapis.com/css?family=Comfortaa|Lobster&subset=cyrillic');
+@font-face {
+  font-family: 'Circe';
+  src: url("assets/fonts/Circe-Bold.ttf");
+  font-style: normal;
+  font-weight: bold;
+}
 
-//font-family: 'Roboto', sans-serif;
-$font-family-sans-serif: 'Arial', 'Helvetica', sans-serif;
-$font-family-serif: 'Georgia', 'Times New Roman', 'Times', serif;
-$font-family-monospace: 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
+
+$font-family-sans-serif: 'Circe', 'Arial', sans-serif;
+$font-family-serif: 'Circe', 'Arial', sans-serif;
 
 $fontFamilyOne: $font-family-sans-serif; // titles
 $fontFamilyTwo: $font-family-sans-serif; // body
