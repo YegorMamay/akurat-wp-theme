@@ -22,7 +22,7 @@
     </section>
     <section class="benefits">
         <div class="container">
-            <h2 class="main-title h2"><?php echo get_post_meta(get_the_ID(), 'benefits_title', true); ?></h2>
+            <h2 class="main-title h2"><?php echo get_post_meta(get_the_ID(), 'about_title', true); ?></h2>
             <div class="benefits__wrapper">
                 <?php
                 global $post;
@@ -48,19 +48,28 @@
             </div>
         </div>
     </section>
-    <section class="block-news">
+    <section class="block-reviews" id="reviews">
+        <div class="container">
+            <h2 class="main-title main-title--centered h2"><?php echo get_post_meta(get_the_ID(), 'reviews_title', true); ?></h2>
+            <?php echo do_shortcode('[bw-reviews]'); ?>
+            <div class="reviews-button">
+                <button type="button" class="btn btn-primary js-post-review">
+                    <?php pll_e('button_review_text'); ?>
+                </button>
+                <a href="<?php echo get_post_type_archive_link('reviews'); ?>" class="btn btn-secondary reviews-button__link">
+                    <?php pll_e('text_all_reviews'); ?>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="block-news" id="news">
         <div class="container">
             <div class="blog-section">
                 <h2 class="main-title h2"><?php echo get_post_meta(get_the_ID(), 'news_title', true); ?></h2>
-                <?php $page_id = 54; ?>
+                <?php $page_id = 52; ?>
                 <a href="<?php echo get_page_link( $page_id ); ?>" class="btn btn-secondary blog-section__button"><?php pll_e('articles_button_text'); ?></a>
             </div>
             <?php echo do_shortcode('[bw-advert count=3 class=front-news]'); ?>
-        </div>
-    </section>
-    <section class="block-reviews" id="reviews">
-        <div class="container">
-            <?php echo do_shortcode('[bw-reviews]'); ?>
         </div>
     </section>
 </div><!-- /.container -->

@@ -127,12 +127,12 @@ q:after {
   content: none;
 }
 
-.btn, .review-social, .review-slider .slick-arrow, a, .phone-dropdown__button:after, .phone-dropdown__button.active:after, .nav .menu-link, .nav .sub-menu, .nav .sub-menu-link, .pre-footer .social-item:hover i, .pre-footer .social i, .pre-footer .messenger-item:hover i, .pre-footer .messenger i, .copyright a, .copyright a:hover, .top-menu__item .social-item:hover i, .top-menu__item .messenger-item:hover i, .svg-icon {
+.btn, .review-social, .review-slider .slick-arrow, .slick-dots li, .slick-dots li.slick-active, .slick-dots li.slick-active button, .slick-dots li button, a, .phone-dropdown__button:after, .phone-dropdown__button.active:after, .nav .menu-link, .nav .sub-menu, .nav .sub-menu-link, .pre-footer .social-item:hover i, .pre-footer .social i, .pre-footer .messenger-item:hover i, .pre-footer .messenger i, .copyright a, .copyright a:hover, .top-menu__item .social-item:hover i, .top-menu__item .messenger-item:hover i, .svg-icon {
   -webkit-transition: .2s;
   transition: .2s;
 }
 
-.phone, .social, .messenger, .lang, .phone-dropdown, .phone-dropdown__list, .nav .menu, .nav .menu-container, .nav .sub-menu {
+.slick-dots, .phone, .social, .messenger, .lang, .phone-dropdown, .phone-dropdown__list, .nav .menu, .nav .menu-container, .nav .sub-menu {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -9230,12 +9230,12 @@ table th[class*="col-"] {
   clear: both;
 }
 
-.btn, .review-social, .review-slider .slick-arrow, a, .phone-dropdown__button:after, .phone-dropdown__button.active:after, .nav .menu-link, .nav .sub-menu, .nav .sub-menu-link, .pre-footer .social-item:hover i, .pre-footer .social i, .pre-footer .messenger-item:hover i, .pre-footer .messenger i, .copyright a, .copyright a:hover, .top-menu__item .social-item:hover i, .top-menu__item .messenger-item:hover i, .svg-icon {
+.btn, .review-social, .review-slider .slick-arrow, .slick-dots li, .slick-dots li.slick-active, .slick-dots li.slick-active button, .slick-dots li button, a, .phone-dropdown__button:after, .phone-dropdown__button.active:after, .nav .menu-link, .nav .sub-menu, .nav .sub-menu-link, .pre-footer .social-item:hover i, .pre-footer .social i, .pre-footer .messenger-item:hover i, .pre-footer .messenger i, .copyright a, .copyright a:hover, .top-menu__item .social-item:hover i, .top-menu__item .messenger-item:hover i, .svg-icon {
   -webkit-transition: .2s;
   transition: .2s;
 }
 
-.phone, .social, .messenger, .lang, .phone-dropdown, .phone-dropdown__list, .nav .menu, .nav .menu-container, .nav .sub-menu {
+.slick-dots, .phone, .social, .messenger, .lang, .phone-dropdown, .phone-dropdown__list, .nav .menu, .nav .menu-container, .nav .sub-menu {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -9825,12 +9825,12 @@ select {
   }
 }
 
-.btn, .review-social, .review-slider .slick-arrow, a, .phone-dropdown__button:after, .phone-dropdown__button.active:after, .nav .menu-link, .nav .sub-menu, .nav .sub-menu-link, .pre-footer .social-item:hover i, .pre-footer .social i, .pre-footer .messenger-item:hover i, .pre-footer .messenger i, .copyright a, .copyright a:hover, .top-menu__item .social-item:hover i, .top-menu__item .messenger-item:hover i, .svg-icon {
+.btn, .review-social, .review-slider .slick-arrow, .slick-dots li, .slick-dots li.slick-active, .slick-dots li.slick-active button, .slick-dots li button, a, .phone-dropdown__button:after, .phone-dropdown__button.active:after, .nav .menu-link, .nav .sub-menu, .nav .sub-menu-link, .pre-footer .social-item:hover i, .pre-footer .social i, .pre-footer .messenger-item:hover i, .pre-footer .messenger i, .copyright a, .copyright a:hover, .top-menu__item .social-item:hover i, .top-menu__item .messenger-item:hover i, .svg-icon {
   -webkit-transition: .2s;
   transition: .2s;
 }
 
-.phone, .social, .messenger, .lang, .phone-dropdown, .phone-dropdown__list, .nav .menu, .nav .menu-container, .nav .sub-menu {
+.slick-dots, .phone, .social, .messenger, .lang, .phone-dropdown, .phone-dropdown__list, .nav .menu, .nav .menu-container, .nav .sub-menu {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -10762,14 +10762,19 @@ ol.commentlist .comment-body {
   color: #333;
 }
 
+.block-reviews {
+  background: #eaedf5;
+  padding: 8% 0;
+}
+
 .review-item {
   margin-bottom: 30px;
 }
 
 .review-client {
   position: relative;
-  max-width: 137px;
-  max-height: 137px;
+  max-width: 90px;
+  max-height: 90px;
   margin: 0 auto 15px;
 }
 
@@ -10787,35 +10792,46 @@ ol.commentlist .comment-body {
 .review-social {
   cursor: pointer;
   position: absolute;
-  right: 10px;
+  right: 5px;
   bottom: 0;
-  display: inline-block;
-  vertical-align: middle;
-  width: 25px;
-  height: 25px;
-  font-size: 14px;
-  line-height: 25px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
   border-radius: 50%;
   color: #fff;
-  background-color: #333;
+  background-color: #a1e1f7;
 }
 
 .review-social:hover, .review-social:active {
   color: #fff;
-  background-color: #2c3e50;
+  background-color: #e8f8fd;
 }
 
 .review-author, .review-title {
-  color: #333;
-  font-size: 16px;
+  color: #1b1d1e;
+  font-size: 20px;
   line-height: 1.3;
   margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.review-content {
+  padding: 0 15px;
 }
 
 .review-content,
 .review-content p {
   color: #000;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
 }
 
@@ -10827,7 +10843,9 @@ ol.commentlist .comment-body {
 
 .review-slider {
   padding: 0 40px;
-  margin: 20px 0;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 900px;
 }
 
 .review-slider .slick-arrow {
@@ -10836,27 +10854,39 @@ ol.commentlist .comment-body {
   top: 50%;
   z-index: 10;
   margin-top: -16px;
-  border: 1px solid #333;
+  border: none;
   padding: 0;
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 60px;
   color: #333;
   font-size: 24px;
   font-weight: bold;
-  line-height: 1;
-  text-align: center;
-  border-radius: 50%;
+  border-radius: 0;
   background-color: transparent;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.review-slider .slick-arrow .icon {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  stroke: #E2E3E7;
 }
 
 .review-slider .slick-arrow:focus {
   outline: none;
 }
 
-.review-slider .slick-arrow:hover {
-  color: #fff;
-  border-color: #2c3e50;
-  background-color: #2c3e50;
+.review-slider .slick-arrow:hover .icon {
+  stroke: #74bedd;
 }
 
 .review-slider .slick-prev {
@@ -10869,8 +10899,8 @@ ol.commentlist .comment-body {
 
 @media only screen and (max-width: 554px) {
   .review-client {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -10882,8 +10912,105 @@ ol.commentlist .comment-body {
     padding: 0;
   }
   .review-slider .slick-arrow {
-    top: 34px;
+    top: 29px;
     margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .review-slider {
+    padding: 0 85px;
+  }
+}
+
+.slick-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.slick-dots li {
+  background: transparent;
+  margin: 0 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  cursor: pointer;
+}
+
+.slick-dots li.slick-active {
+  border-color: #a1e1f7;
+}
+
+.slick-dots li.slick-active button {
+  background: #a1e1f7;
+}
+
+.slick-dots li button {
+  background: #9a9a9a;
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+  font-size: 0;
+  padding: 0;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  cursor: pointer;
+}
+
+.reviews-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 4%;
+}
+
+.reviews-button__link {
+  line-height: 1.17;
+  min-width: 190px;
+  margin-left: 20px;
+}
+
+.reviews-button__link:hover, .reviews-button__link:focus {
+  color: #1b1d1e;
+}
+
+.reviews-button button {
+  min-width: 190px;
+}
+
+@media screen and (max-width: 768px) {
+  .reviews-button {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .reviews-button__link {
+    margin-left: 0;
+    margin-top: 15px;
   }
 }
 

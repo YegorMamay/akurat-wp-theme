@@ -1,18 +1,18 @@
-$review-title-color: #333 !default;
-$review-title-font-size: 16px !default;
+$review-title-color: $themeColorOne !default;
+$review-title-font-size: 20px !default;
 $review-title-font-weight: normal !default;
 $review-title-text-transform: none !default;
 
-$review-client-size: 100px !default;
+$review-client-size: 90px !default;
 
 $review-content-color: #000 !default;
-$review-content-font-size: 16px !default;
+$review-content-font-size: 18px !default;
 
-$review-social-size: 25px !default;
+$review-social-size: 30px !default;
 $review-social-color: #fff !default;
-$review-social-background: #333 !default;
+$review-social-background: $accent_color_2 !default;
 $review-social-hover-color: #fff !default;
-$review-social-hover-background: #2c3e50 !default;
+$review-social-hover-background: lighten($accent_color_2, 15%) !default;
 
 $review-arrow-size: 32px !default;
 $review-arrow-color: #333 !default;
@@ -28,170 +28,270 @@ $review-arrow-hover-background: #2c3e50 !default;
 $review-prev: '\00ab'; // &laquo;
 $review-next: '\00bb'; // &raquo;
 
+.block-reviews {
+  background: $reviews_bg_color;
+  padding: 8% 0;
+}
+
 .review {
-    &-list {
+
+  &-list {
+
+  }
+
+  &-item {
+    margin-bottom: 30px;
+  }
+
+  &-client {
+    position: relative;
+    max-width: 90px;
+    max-height: 90px;
+    margin: 0 auto 15px;
+  }
+
+  &-title {
+    font-weight: $review-title-font-weight;
+    text-transform: $review-title-text-transform;
+  }
+
+  &-avatar {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+
+  &-social {
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    bottom: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: $review-social-size;
+    height: $review-social-size;
+    font-size: 18px;
+    border-radius: 50%;
+    color: $review-social-color;
+    background-color: $review-social-background;
+    @extend %smooth_animation;
+
+    &:hover,
+    &:active {
+      color: $review-social-hover-color;
+      background-color: $review-social-hover-background;
+    }
+  }
+
+  &-author,
+  &-title {
+    color: $review-title-color;
+    font-size: $review-title-font-size;
+    line-height: 1.3;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+
+  &-content {
+    padding: 0 15px;
+
+    &,
+    p {
+      color: $review-content-color;
+      font-size: $review-content-font-size;
+      line-height: 1.5;
+    }
+  }
+
+  &-date {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333;
+  }
+
+  &-slider {
+    padding: 0 40px;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 900px;
+
+    .review-item {
 
     }
 
-    &-item {
-        margin-bottom: 30px;
-    }
+    .slick {
+      &-list {
 
-    &-client {
-        position: relative;
-        max-width: 137px;
-        max-height: 137px;
-        margin: 0 auto 15px;
-    }
+      }
 
-    &-title {
-        font-weight: $review-title-font-weight;
-        text-transform: $review-title-text-transform;
-    }
-
-    &-avatar {
-        display: block;
-        margin: 0 auto;
-        border-radius: 50%;
-    }
-
-    &-social {
+      &-arrow {
         cursor: pointer;
         position: absolute;
-        right: 10px;
-        bottom: 0;
-        display: inline-block;
-        vertical-align: middle;
-        width: $review-social-size;
-        height: $review-social-size;
-        font-size: 14px;
-        line-height: $review-social-size;
-        border-radius: 50%;
-        color: $review-social-color;
-        background-color: $review-social-background;
+        top: 50%;
+        z-index: 10;
+        margin-top: -($review-arrow-size / 2);
+        border: none;
+        padding: 0;
+        width: 30px;
+        height: 60px;
+        color: $review-arrow-color;
+        font-size: $review-arrow-font-size;
+        font-weight: $review-arrow-font-weight;
+        border-radius: 0;
+        background-color: transparent;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         @extend %smooth_animation;
 
-        &:hover,
-        &:active {
-            color: $review-social-hover-color;
-            background-color: $review-social-hover-background;
-        }
-    }
-
-    &-author,
-    &-title {
-        color: $review-title-color;
-        font-size: $review-title-font-size;
-        line-height: 1.3;
-        margin-bottom: 15px;
-    }
-
-    &-content {
-        &,
-        p {
-            color: $review-content-color;
-            font-size: $review-content-font-size;
-            line-height: 1.5;
-        }
-    }
-
-    &-date {
-        margin-top: 15px;
-        font-size: 14px;
-        color: #333;
-    }
-
-    &-slider {
-        padding: 0 40px;
-        margin: 20px 0;
-
-        .review-item {
-
+        & .icon {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          stroke: $arrow_color;
         }
 
-        .slick {
-            &-list {
-
-            }
-
-            &-arrow {
-                cursor: pointer;
-                position: absolute;
-                top: 50%;
-                z-index: 10;
-                margin-top: -($review-arrow-size / 2);
-                border: $review-arrow-border-width solid $review-arrow-border-color;
-                padding: 0;
-                width: $review-arrow-size;
-                height: $review-arrow-size;
-                color: $review-arrow-color;
-                font-size: $review-arrow-font-size;
-                font-weight: $review-arrow-font-weight;
-                line-height: 1;
-                text-align: center;
-                border-radius: $review-arrow-radius;
-                background-color: $review-arrow-background;
-                @extend %smooth_animation;
-
-                &:focus {
-                    outline: none;
-                }
-
-                &:hover {
-                    color: $review-arrow-hover-color;
-                    border-color: $review-arrow-hover-border-color;
-                    background-color: $review-arrow-hover-background;
-                }
-            }
-
-            &-prev {
-                left: 0;
-
-                //&::before {
-                //    content: $review-prev;
-                //}
-            }
-
-            &-next {
-                right: 0;
-
-                //&::before {
-                //    content: $review-next;
-                //}
-            }
+        &:focus {
+          outline: none;
         }
+
+        &:hover {
+          & .icon {
+            stroke: $arrow_hover_color;
+          }
+        }
+      }
+
+      &-prev {
+        left: 0;
+
+        //&::before {
+        //    content: $review-prev;
+        //}
+      }
+
+      &-next {
+        right: 0;
+
+        //&::before {
+        //    content: $review-next;
+        //}
+      }
     }
+  }
 }
 
 @media only screen and (max-width: 554px) {
-    .review {
-        &-client {
-            width: $review-client-size;
-            height: $review-client-size;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        &-content {
-            &,
-            p {
-                font-size: 14px;
-            }
-        }
-
-        &-slider {
-            padding: 0;
-
-            .slick {
-                &-list {
-
-                }
-
-                &-arrow {
-                    top: ($review-client-size - $review-arrow-size) / 2;
-                    margin-top: 0;
-                }
-            }
-        }
+  .review {
+    &-client {
+      width: $review-client-size;
+      height: $review-client-size;
+      margin-left: auto;
+      margin-right: auto;
     }
+
+    &-content {
+      &,
+      p {
+        font-size: 14px;
+      }
+    }
+
+    &-slider {
+      padding: 0;
+
+      .slick {
+        &-list {
+
+        }
+
+        &-arrow {
+          top: ($review-client-size - $review-arrow-size) / 2;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .review-slider {
+    padding: 0 85px;
+  }
+}
+
+.slick-dots {
+  @extend %reset-list;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & li {
+    background: transparent;
+    margin: 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    @extend %smooth_animation;
+    cursor: pointer;
+
+    &.slick-active {
+      @extend %smooth_animation;
+      border-color: $dots_color_active;
+
+      & button {
+        @extend %smooth_animation;
+        background: $dots_color_active;
+      }
+    }
+
+    & button {
+      background: $dots_color;
+      border: none;
+      box-shadow: none;
+      outline: none;
+      font-size: 0;
+      padding: 0;
+      border-radius: 50%;
+      @extend %smooth_animation;
+      width: 8px;
+      height: 8px;
+      cursor: pointer;
+    }
+  }
+}
+
+.reviews-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4%;
+
+  &__link {
+    line-height: 1.17;
+    min-width: 190px;
+    margin-left: 20px;
+
+    &:hover, &:focus {
+      color: $themeColorOne;
+    }
+  }
+
+  & button {
+    min-width: 190px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .reviews-button {
+    flex-direction: column;
+
+    &__link {
+      margin-left: 0;
+      margin-top: 15px;
+    }
+  }
 }

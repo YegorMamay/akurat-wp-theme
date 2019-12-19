@@ -64,7 +64,19 @@
 
 <?php scroll_top(); ?>
 
-<div class="is-hide"><?php svg_sprite(); ?></div>
+<div class="is-hide">
+    <svg width="0" height="0" class="hidden">
+        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.068 60.112" id="arrow-left">
+            <path fill="none" stroke="#fff" stroke-width="3" stroke-miterlimit="10" d="M25.874.909L3.68 30.056l22.194 29.147"></path>
+            <path opacity=".5" fill="none" stroke-width="3" stroke-miterlimit="10" d="M24.08.909L1.885 30.056 24.08 59.203"></path>
+        </symbol>
+        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.068 60.111" id="arrow-right">
+            <path fill="none" stroke="#fff" stroke-width="3" stroke-miterlimit="10" d="M1.193 59.203l22.194-29.147L1.193.909"></path>
+            <path opacity=".5" fill="none" stroke-width="3" stroke-miterlimit="10" d="M2.987 59.203l22.195-29.147L2.987.909"></path>
+        </symbol>
+    </svg>
+    <?php svg_sprite(); ?>
+</div>
 
 <?php wp_footer(); ?>
 
