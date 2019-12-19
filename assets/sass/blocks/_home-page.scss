@@ -127,3 +127,34 @@
     }
   }
 }
+
+.block-news {
+  padding: 4% 0;
+}
+
+.blog-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__button {
+    min-width: 200px;
+    &:hover, &:focus {
+      color: $themeColorOne;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .blog-section {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    & .main-title {
+      margin-bottom: 20px;
+    }
+
+    &__button {
+      margin-bottom: 20px;
+    }
+  }
+}

@@ -44,16 +44,17 @@ add_action( 'after_setup_theme', function () {
         pll_register_string( 'social-odnoklassniki', 'Odnoklassniki', 'Brainworks' );
         pll_register_string( 'call_back_text', 'call_back_text', 'Brainworks' );
         pll_register_string( 'button_info', 'button_info', 'Brainworks' );
+        pll_register_string( 'articles_button_text', 'articles_button_text', 'Brainworks' );
     }
 } );
 
 //Преимущества
-add_action('init', 'my_custom_benefits');
-function my_custom_benefits(){
-    register_post_type('benefits', array(
+add_action('init', 'my_custom_about');
+function my_custom_about(){
+    register_post_type('about', array(
         'labels'             => array(
-            'name'               => 'Преимущества',
-            'singular_name'      => 'Преимущество',
+            'name'               => 'О компании',
+            'singular_name'      => 'Блок о компании',
             'add_new'            => 'Добавить',
             'add_new_item'       => 'Добавить новый блок',
             'edit_item'          => 'Редактировать блок',
@@ -63,7 +64,7 @@ function my_custom_benefits(){
             'not_found'          =>  'Блоков не найдено',
             'not_found_in_trash' => 'В корзине блоков не найдено',
             'parent_item_colon'  => '',
-            'menu_name'          => 'Преимущества'
+            'menu_name'          => 'О компании'
 
         ),
         'public'             => true,

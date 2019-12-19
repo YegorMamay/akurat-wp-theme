@@ -354,22 +354,22 @@ if (!function_exists('bw_advert_shortcode')) {
                     get_the_post_thumbnail(null, 'medium', ['class' => $basic_class . '-thumbnail'])
                 ) : '';
 
-                $headline = sprintf('<h3 class="%s-headline"><a href="%s">%s</a></h3>',
+                $headline = sprintf('<div class="%s-headline"><a href="%s">%s</a></div>',
                     $basic_class, get_the_permalink(), get_the_title()
                 );
 
-                $excerpt = sprintf('<div class="%s-excerpt">%s</div>', $basic_class, get_the_excerpt());
+//                $excerpt = sprintf('<div class="%s-excerpt">%s</div>', $basic_class, get_the_excerpt());
 
-                $btn = sprintf('<div class="text-right"><a class="btn btn-secondary btn-sm %s-link" href="%s">%s</a></div>',
-                    $basic_class, get_the_permalink(), __('Continue reading', 'brainworks')
-                );
+//                $btn = sprintf('<div class="text-right"><a class="btn btn-secondary btn-sm %s-link" href="%s">%s</a></div>',
+//                    $basic_class, get_the_permalink(), __('Continue reading', 'brainworks')
+//                );
 
                 $box = sprintf( '<div class="%s-box">%s <div class="%s-inner">%s %s %s</div></div>',
                     $basic_class, $thumbnail, $basic_class, $headline, $excerpt, $btn
                 );
 
                 $item = sprintf('<section id="post-%s" class="%s">%s</section>', get_the_ID(),
-                    join(' ', get_post_class(['col-md-4', $basic_class . '-item'])),
+                    join(' ', get_post_class(['col-12 col-md-6 col-lg-4', $basic_class . '-item'])),
                     $box
                 );
 

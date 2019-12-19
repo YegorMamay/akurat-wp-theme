@@ -10721,12 +10721,19 @@ ol.commentlist .comment-body {
   text-align: left;
 }
 
+.front-news-box {
+  width: 100%;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .front-news-item {
   margin-bottom: 20px;
 }
 
 .front-news-headline {
-  font-size: 28px;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
@@ -12807,6 +12814,51 @@ hr.style-two {
 @media screen and (min-width: 1150px) {
   .benefits__item {
     width: 25%;
+  }
+}
+
+.block-news {
+  padding: 4% 0;
+}
+
+.blog-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.blog-section__button {
+  min-width: 200px;
+}
+
+.blog-section__button:hover, .blog-section__button:focus {
+  color: #1b1d1e;
+}
+
+@media screen and (max-width: 768px) {
+  .blog-section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .blog-section .main-title {
+    margin-bottom: 20px;
+  }
+  .blog-section__button {
+    margin-bottom: 20px;
   }
 }
 

@@ -27,7 +27,7 @@
                 <?php
                 global $post;
                 $args = array(
-                    'post_type'=> 'benefits',
+                    'post_type'=> 'about',
                     'publish' => true,
                     'posts_per_page' => 20
                 );
@@ -46,6 +46,16 @@
                 wp_reset_postdata();
                 ?>
             </div>
+        </div>
+    </section>
+    <section class="block-news">
+        <div class="container">
+            <div class="blog-section">
+                <h2 class="main-title h2"><?php echo get_post_meta(get_the_ID(), 'news_title', true); ?></h2>
+                <?php $page_id = 54; ?>
+                <a href="<?php echo get_page_link( $page_id ); ?>" class="btn btn-secondary blog-section__button"><?php pll_e('articles_button_text'); ?></a>
+            </div>
+            <?php echo do_shortcode('[bw-advert count=3 class=front-news]'); ?>
         </div>
     </section>
 </div><!-- /.container -->
