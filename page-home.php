@@ -58,5 +58,10 @@
             <?php echo do_shortcode('[bw-advert count=3 class=front-news]'); ?>
         </div>
     </section>
+    <section class="block-reviews" id="reviews">
+        <div class="container">
+            <?php echo do_shortcode('[bw-reviews]'); ?>
+        </div>
+    </section>
 </div><!-- /.container -->
 <?php get_footer(); ?>
