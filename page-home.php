@@ -98,7 +98,9 @@
     <section class="benefits-section">
         <div class="container">
             <div class="benefits-section__wrapper">
-                <h2 class="main-title h2"><?php echo get_post_meta(get_the_ID(), 'benefits_title', true); ?></h2>
+                <div class="benefits-section__title-wrapper">
+                    <h2 class="main-title h2"><?php echo get_post_meta(get_the_ID(), 'benefits_title', true); ?></h2>
+                </div>
                 <?php
                 global $post;
                 $args = array(
@@ -111,6 +113,8 @@
                     ?>
                     <div class="benefits-section__item">
                         <div class="benefits-section__container">
+                            <?php $post_thumbnail_id = get_post_thumbnail_id( $post ); ?>
+                            <img class="benefits-section__image" src="<?php echo wp_get_attachment_image_url( $post_thumbnail_id ); ?>" alt="icon">
                             <div class="benefits-section__description"><?php the_excerpt(); ?></div>
                         </div>
                     </div>

@@ -112,7 +112,7 @@ function my_custom_benefits(){
         'has_archive'        => true,
         'hierarchical'       => false,
         'menu_position'      => null,
-        'supports'           => array('title', 'editor')
+        'supports'           => array('title', 'editor', 'thumbnail')
     ) );
 }
 
