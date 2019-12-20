@@ -12,6 +12,7 @@
             html.addClass("is-mobile");
         }
         html.removeClass("no-js").addClass("js");
+        tabs();
         dropdownPhone();
         scrollToElement();
         sidebarAccordion();
@@ -245,6 +246,31 @@
                 ajaxStart = false;
                 throw new Error("Handling Ajax request loading posts has caused an ".concat(textStatus, " - ").concat(errorThrown));
             });
+        });
+    };
+    var tabs = function tabs() {
+        var tabsItem = $(".tabs__item");
+        var tabsContent = $(".tabs__content");
+        var mobileItem = $(".tabs__mobile-item");
+        tabsItem.on("click", function() {
+            var tabsData = $(this).attr("data-tab");
+            tabsItem.removeClass("active");
+            tabsContent.removeClass("active");
+            $(this).addClass("active");
+            $("#" + tabsData).addClass("active");
+            $("html, body").animate({
+                scrollTop: $("#service").offset().top
+            }, 300);
+        });
+        mobileItem.on("click", function() {
+            $(this).toggleClass("active");
+            $(".tabs__mobile-item").not($(this)).removeClass("active");
+            var currentTab = $(this).next(".tabs__content");
+            currentTab.toggleClass("active");
+            $(".tabs__content").not(currentTab).removeClass("active");
+            $("html, body").animate({
+                scrollTop: $(".tabs").offset().top - 160
+            }, 400);
         });
     };
 })(window, document, jQuery, window.jpAjax);

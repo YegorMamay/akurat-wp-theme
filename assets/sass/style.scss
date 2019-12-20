@@ -63,6 +63,7 @@ Tags: one-column, two-columns, full-width-template, e-commerce
 @import "blocks/footer";
 @import "blocks/top-menu";
 @import "blocks/home-page";
+@import "blocks/tab";
 
 ::selection {
   text-shadow: none;
@@ -200,6 +201,7 @@ img {
 @media screen and (min-width: 992px) {
   .main-title {
     text-align: left;
+
     &--centered {
       text-align: center;
     }

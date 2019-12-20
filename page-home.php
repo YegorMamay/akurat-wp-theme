@@ -48,6 +48,53 @@
             </div>
         </div>
     </section>
+    <section class="tab-wrapper" id="service">
+        <div class="container">
+            <h2 class="main-title main-title--centered h2"><?php echo get_post_meta(get_the_ID(), 'service_title', true); ?></h2>
+            <div class="tabs">
+                <?php
+                $count_tabs = 1;
+                $count_tab_content = 1;
+                $tabs = get_field('tabs');
+                ?>
+                <div class="tabs__group">
+                <?php
+                foreach ($tabs as $content) {
+                    ?>
+                    <div class="tabs__item<?php echo $count_tabs == 1 ? ' active': '' ?>" data-tab="tab<?php echo $count_tabs; ?>"><?php echo $content['new_tab']; ?></div>
+                    <?php
+                    $count_tabs++;
+                } ?>
+                </div>
+                <?php
+                wp_reset_postdata();
+                foreach ($tabs as $content) {
+                    ?>
+                    <div class="tabs__mobile-item<?php echo $count_tab_content == 1 ? ' active': '' ?>"><?php echo $content['new_tab']; ?></div>
+                    <div class="tabs__content<?php echo $count_tab_content == 1 ? ' active': '' ?>" id="tab<?php echo $count_tab_content; ?>">
+                        <div class="tabs__wrapper">
+                        <?php foreach ($content['tab_content'] as $value) {
+                            ?>
+                            <div class="item">
+                                <div class="item__wrapper">
+                                    <img class="item__image" src="<?php echo $value['tab_item_image']['url']; ?>">
+                                    <div class="item__title"><?php echo $value['tab_item_info']['tab_item_title']; ?></div>
+                                    <div class="item__description"><?php echo $value['tab_item_info']['tab_item_description']; ?></div>
+                                    <div class="item__price"><?php echo $value['tab_item_info']['tab_item_price']; ?></div>
+                                </div>
+                            </div>
+                            <?php
+                        } ?>
+                        </div>
+                    </div>
+                <?php
+                $count_tab_content++;
+                }
+                wp_reset_postdata();
+                ?>
+            </div>
+        </div>
+    </section>
     <section class="block-reviews" id="reviews">
         <div class="container">
             <h2 class="main-title main-title--centered h2"><?php echo get_post_meta(get_the_ID(), 'reviews_title', true); ?></h2>

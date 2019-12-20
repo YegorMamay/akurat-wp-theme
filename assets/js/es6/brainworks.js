@@ -16,7 +16,7 @@
         }
 
         html.removeClass('no-js').addClass('js');
-
+        tabs();
         dropdownPhone();
         scrollToElement();
         sidebarAccordion();
@@ -498,6 +498,43 @@
                 });
 
         });
+    };
+
+    /**
+     * tabs
+     *
+     * @example
+     * tabs();
+     *
+     * @returns {void}
+     */
+    const tabs = () => {
+        const tabsItem = $('.tabs__item');
+        const tabsContent = $('.tabs__content');
+        const mobileItem = $('.tabs__mobile-item');
+
+        tabsItem.on('click', function () {
+            let tabsData = $(this).attr('data-tab');
+            tabsItem.removeClass('active');
+            tabsContent.removeClass('active');
+            $(this).addClass('active');
+            $("#" + tabsData).addClass('active');
+            $('html, body').animate({
+                scrollTop: $('#service').offset().top
+            }, 300);
+        });
+
+        mobileItem.on('click', function () {
+            $(this).toggleClass('active');
+            $('.tabs__mobile-item').not($(this)).removeClass('active');
+            let currentTab = $(this).next('.tabs__content');
+            currentTab.toggleClass('active');
+            $('.tabs__content').not(currentTab).removeClass('active');
+            $('html, body').animate({
+                scrollTop: $('.tabs').offset().top - 160
+            }, 400);
+        });
+
     };
 
 })(window, document, jQuery, window.jpAjax);
