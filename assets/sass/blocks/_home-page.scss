@@ -57,7 +57,7 @@
   }
 }
 
-.benefits {
+.block-about {
   background: $light_bg_color;
   padding: 8% 0;
 
@@ -105,7 +105,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .benefits {
+  .block-about {
     &__item {
       width: 50%;
     }
@@ -113,7 +113,7 @@
 }
 
 @media screen and (min-width: 992px) {
-  .benefits {
+  .block-about {
     &__item {
       width: 33.3333%;
       margin-left: 0;
@@ -123,7 +123,7 @@
 }
 
 @media screen and (min-width: 1150px) {
-  .benefits {
+  .block-about {
     &__item {
       width: 25%;
     }
@@ -241,6 +241,98 @@
         max-width: 520px;
         font-size: 55px;
         text-align: left;
+      }
+    }
+  }
+}
+
+.block-special {
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__caption {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 30px;
+    width: 100%;
+    max-width: 420px;
+    & p {
+      color: $primary_color_1;
+      font-size: 23px;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+  }
+
+  &__button {
+    min-width: 180px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .block-special {
+    &__caption {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    &__button {
+      margin-top: 20px;
+    }
+
+    &__title {
+      max-width: none;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .block-special {
+    padding: 10px 0;
+    &__caption {
+      width: 100%;
+      justify-content: flex-end;
+      align-items: flex-end;
+      padding: 5px;
+    }
+
+    &__title {
+      font-size: 22px;
+      text-align: right;
+      & p {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .block-special {
+    &__wrapper {
+      background: $block_special_bg_glass;
+      min-height: 180px;
+    }
+    &__caption {
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__title {
+      text-align: center;
+      & p {
+        text-align: center;
       }
     }
   }

@@ -47,6 +47,7 @@ add_action( 'after_setup_theme', function () {
         pll_register_string( 'articles_button_text', 'articles_button_text', 'Brainworks' );
         pll_register_string( 'button_review_text', 'button_review_text', 'Brainworks' );
         pll_register_string( 'text_all_reviews', 'text_all_reviews', 'Brainworks' );
+        pll_register_string( 'button_text_order', 'button_text_order', 'Brainworks' );
     }
 } );
 

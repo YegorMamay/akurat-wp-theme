@@ -20,10 +20,10 @@
             </div>
         </div>
     </section>
-    <section class="benefits" id="about">
+    <section class="block-about" id="about">
         <div class="container">
             <h2 class="main-title h2"><?php echo get_post_meta(get_the_ID(), 'about_title', true); ?></h2>
-            <div class="benefits__wrapper">
+            <div class="block-about__wrapper">
                 <?php
                 global $post;
                 $args = array(
@@ -34,10 +34,10 @@
                 $about_item = get_posts($args);
                 foreach ($about_item as $post) {
                     ?>
-                    <div class="benefits__item">
-                        <div class="benefits__container">
-                            <p class="benefits__title"><?php the_title(); ?></p>
-                            <div class="benefits__description"><?php the_excerpt(); ?></div>
+                    <div class="block-about__item">
+                        <div class="block-about__container">
+                            <p class="block-about__title"><?php the_title(); ?></p>
+                            <div class="block-about__description"><?php the_excerpt(); ?></div>
                         </div>
                     </div>
                     <?php
@@ -95,6 +95,19 @@
             </div>
         </div>
     </section>
+    <?php $special_1 = get_field('special_1'); ?>
+    <section class="block-special" style="background: url('<?php echo $special_1['special_image_1']; ?>') no-repeat center/cover">
+        <div class="container">
+        <div class="block-special__wrapper">
+            <div class="block-special__caption">
+                <div class="block-special__title">
+                    <?php echo $special_1['special_text_1']; ?>
+                </div>
+                <button type="button" class="btn btn-primary block-special__button js-order-1"><?php pll_e('button_text_order'); ?></button>
+            </div>
+        </div>
+        </div>
+    </section>
     <section class="benefits-section">
         <div class="container">
             <div class="benefits-section__wrapper">
@@ -123,6 +136,32 @@
 
                 wp_reset_postdata();
                 ?>
+            </div>
+        </div>
+    </section>
+    <?php $special_2 = get_field('special_2'); ?>
+    <section class="block-special" style="background: url('<?php echo $special_2['special_image_2']; ?>') no-repeat center/cover">
+        <div class="container">
+            <div class="block-special__wrapper">
+                <div class="block-special__caption">
+                    <div class="block-special__title">
+                        <?php echo $special_2['special_text_2']; ?>
+                    </div>
+                    <button type="button" class="btn btn-primary block-special__button js-order-2"><?php pll_e('button_text_order'); ?></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <?php $special_3 = get_field('special_3'); ?>
+    <section class="block-special" style="background: url('<?php echo $special_3['special_image_3']; ?>') no-repeat center/cover">
+        <div class="container">
+            <div class="block-special__wrapper">
+                <div class="block-special__caption">
+                    <div class="block-special__title">
+                        <?php echo $special_3['special_text_3']; ?>
+                    </div>
+                    <button type="button" class="btn btn-primary block-special__button js-order-3"><?php pll_e('button_text_order'); ?></button>
+                </div>
             </div>
         </div>
     </section>
