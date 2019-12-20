@@ -20,7 +20,7 @@
             </div>
         </div>
     </section>
-    <section class="benefits">
+    <section class="benefits" id="about">
         <div class="container">
             <h2 class="main-title h2"><?php echo get_post_meta(get_the_ID(), 'about_title', true); ?></h2>
             <div class="benefits__wrapper">
@@ -31,8 +31,8 @@
                     'publish' => true,
                     'posts_per_page' => 20
                 );
-                $benefits_item = get_posts($args);
-                foreach ($benefits_item as $post) {
+                $about_item = get_posts($args);
+                foreach ($about_item as $post) {
                     ?>
                     <div class="benefits__item">
                         <div class="benefits__container">
@@ -90,6 +90,33 @@
                 <?php
                 $count_tab_content++;
                 }
+                wp_reset_postdata();
+                ?>
+            </div>
+        </div>
+    </section>
+    <section class="benefits-section">
+        <div class="container">
+            <div class="benefits-section__wrapper">
+                <h2 class="main-title h2"><?php echo get_post_meta(get_the_ID(), 'benefits_title', true); ?></h2>
+                <?php
+                global $post;
+                $args = array(
+                    'post_type'=> 'benefits',
+                    'publish' => true,
+                    'posts_per_page' => 20
+                );
+                $benefits_item = get_posts($args);
+                foreach ($benefits_item as $post) {
+                    ?>
+                    <div class="benefits-section__item">
+                        <div class="benefits-section__container">
+                            <div class="benefits-section__description"><?php the_excerpt(); ?></div>
+                        </div>
+                    </div>
+                    <?php
+                }
+
                 wp_reset_postdata();
                 ?>
             </div>
