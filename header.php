@@ -144,6 +144,21 @@
             'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
             'depth' => 3
         )); ?>
+            <div class="mobile-language">
+                <?php if (function_exists('pll_the_languages')) { ?>
+                    <ul class="lang">
+                        <?php pll_the_languages(array(
+                            'show_flags' => 0,
+                            'show_names' => 1,
+                            'hide_if_empty' => 0,
+                            'display_names_as' => 'name'
+                        )); ?>
+                    </ul>
+                <?php } ?>
+            </div>
+            <div class="mobile-phones">
+                <?php echo do_shortcode('[bw-phone]'); ?>
+            </div>
         </nav>
     <?php } ?>
     <!-- Mobile menu end-->

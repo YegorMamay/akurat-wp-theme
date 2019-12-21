@@ -117,5 +117,38 @@ function my_custom_benefits(){
     ) );
 }
 
+//Как мы работаем
+add_action('init', 'my_custom_block');
+function my_custom_block(){
+    register_post_type('how_we_work', array(
+        'labels'             => array(
+            'name'               => 'Как мы работаем',
+            'singular_name'      => 'Как мы работаем',
+            'add_new'            => 'Добавить блок',
+            'add_new_item'       => 'Добавить новый блок',
+            'edit_item'          => 'Редактировать блок',
+            'new_item'           => 'Новый блок',
+            'view_item'          => 'Посмотреть блок',
+            'search_items'       => 'Найти блок',
+            'not_found'          =>  'Блоков не найдено',
+            'not_found_in_trash' => 'В корзине блоков не найдено',
+            'parent_item_colon'  => '',
+            'menu_name'          => 'Как мы работаем'
+
+        ),
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => true,
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'supports'           => array('title', 'editor', 'thumbnail')
+    ) );
+}
+
 
 

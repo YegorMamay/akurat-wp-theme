@@ -108,7 +108,7 @@
         </div>
         </div>
     </section>
-    <section class="benefits-section">
+    <section class="benefits-section" id="benefits">
         <div class="container">
             <div class="benefits-section__wrapper">
                 <div class="benefits-section__title-wrapper">
@@ -149,6 +149,55 @@
                     </div>
                     <button type="button" class="btn btn-primary block-special__button js-order-2"><?php pll_e('button_text_order'); ?></button>
                 </div>
+            </div>
+        </div>
+    </section>
+    <?php
+    $order_block = get_post_meta(get_the_ID(), 'order_image', true);
+    $order_block_image = wp_get_attachment_url($order_block);
+    ?>
+    <section class="order-section" id="order" style="background: url('<?php echo $order_block_image; ?>')">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-5 col-xl-4">
+                    <div class="order-section__title"><?php echo get_post_meta(get_the_ID(), 'order_title', true) ?></div>
+                    <div class="order-section__sub-title"><?php echo get_post_meta(get_the_ID(), 'order_sub_title', true) ?></div>
+                </div>
+                <div class="col-12 col-lg-7 col-xl-8">
+                    <div class="order-section__description">
+                        <?php echo get_post_meta(get_the_ID(), 'order_title_right_column', true) ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bottom-section">
+        <div class="container">
+            <h2 class="main-title main-title--centered h2"><?php echo get_post_meta(get_the_ID(), 'how_we_work_title', true); ?></h2>
+            <div class="bottom-section__wrapper">
+                <?php
+                global $post;
+                $args = array(
+                    'post_type'=> 'how_we_work',
+                    'publish' => true,
+                    'posts_per_page' => 6
+                );
+
+                $work_steps = get_posts($args);
+                foreach ($work_steps as $post) {
+                    ?>
+                    <div class="bottom-section__item">
+                        <div class="bottom-section__container">
+                            <?php $post_thumbnail_id = get_post_thumbnail_id( $post ); ?>
+                            <img class="bottom-section__icon" src="<?php echo wp_get_attachment_image_url( $post_thumbnail_id ); ?>" alt="icon">
+                            <div class="bottom-section__description"><?php the_excerpt(); ?></div>
+                            <div class="bottom-section__count"><?php the_title(); ?></div>
+                        </div>
+                    </div>
+                    <?php
+                }
+                wp_reset_postdata();
+                ?>
             </div>
         </div>
     </section>
