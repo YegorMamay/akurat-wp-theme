@@ -1,4 +1,4 @@
-<footer class="footer js-footer">
+<footer class="footer js-footer" id="contacts">
     <?php /* if (is_active_sidebar('footer-widget-area')) : ?>
         <div class="pre-footer">
             <div class="container">
