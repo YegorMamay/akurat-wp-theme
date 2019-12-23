@@ -16,7 +16,7 @@
             <div class="top-section__description">
                 <h1 class="top-section__title h1"><?php echo get_post_meta(get_the_ID(), 'first_screen_title', true); ?></h1>
                 <div class="top-section__text"><?php echo get_post_meta(get_the_ID(), 'first_screen_description', true); ?></div>
-                <a href="#" type="button" class="btn btn-primary top-section__button"><?php pll_e('button_info'); ?></a>
+                <a href="#about" type="button" class="btn btn-primary top-section__button"><?php pll_e('button_info'); ?></a>
             </div>
         </div>
     </section>
@@ -167,6 +167,7 @@
                     <div class="order-section__description">
                         <?php echo get_post_meta(get_the_ID(), 'order_title_right_column', true) ?>
                     </div>
+                    <?php echo do_shortcode('[booked-calendar]'); ?>
                 </div>
             </div>
         </div>
@@ -233,7 +234,7 @@
             <div class="blog-section">
                 <h2 class="main-title h2"><?php echo get_post_meta(get_the_ID(), 'news_title', true); ?></h2>
                 <?php $page_id = 52; ?>
-                <a href="<?php echo get_page_link( $page_id ); ?>" class="btn btn-secondary blog-section__button"><?php pll_e('articles_button_text'); ?></a>
+                <a href="<?php echo get_permalink(pll_get_post($page_id)); ?>" class="btn btn-secondary blog-section__button"><?php pll_e('articles_button_text'); ?></a>
             </div>
             <?php echo do_shortcode('[bw-advert count=3 class=front-news]'); ?>
         </div>

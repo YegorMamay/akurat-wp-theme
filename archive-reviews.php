@@ -3,7 +3,7 @@
 <div class="container">
     <?php if (function_exists('kama_breadcrumbs')) kama_breadcrumbs(' » '); ?>
 <div class="row">
-    <div class="col-12 col-md-12">
+    <div class="col-12 col-md-8">
         <h1 class="text-center"><?php post_type_archive_title(); ?></h1>
 
         <div class="sp-xs-2 sp-md-3"></div>

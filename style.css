@@ -13589,18 +13589,21 @@ hr.style-two {
   color: #1b1d1e;
   font-size: 22px;
   font-weight: 700;
+  text-align: center;
 }
 
 .item__description {
   color: #acafb3;
   font-size: 18px;
   margin: 6px 0;
+  text-align: center;
 }
 
 .item__price {
   color: #1b1d1e;
   font-size: 22px;
   font-weight: 700;
+  text-align: center;
 }
 
 @media screen and (min-width: 600px) {

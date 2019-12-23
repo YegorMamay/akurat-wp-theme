@@ -120,18 +120,21 @@
     color: $themeColorOne;
     font-size: 22px;
     font-weight: 700;
+    text-align: center;
   }
 
   &__description {
     color: $light_description_color;
     font-size: 18px;
     margin: 6px 0;
+    text-align: center;
   }
 
   &__price {
     color: $themeColorOne;
     font-size: 22px;
     font-weight: 700;
+    text-align: center;
   }
 }
 
