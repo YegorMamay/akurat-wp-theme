@@ -59,7 +59,6 @@
         </div>
     </div>
 </footer>
-
 </div><!-- .wrapper end Do not delete! -->
 
 <?php scroll_top(); ?>
@@ -79,6 +78,12 @@
 </div>
 
 <?php wp_footer(); ?>
-
+<script type="text/javascript">
+    var viberLink = $('.messenger-viber').attr('href');
+    if($(window).width() < 1024) {
+        var resultLink = viberLink.replace('chat?', 'add?');
+        $('.messenger-viber').attr('href', resultLink);
+    }
+</script>
 </body>
 </html>
