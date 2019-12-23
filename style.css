@@ -12856,8 +12856,9 @@ hr.style-two {
   color: #1b1d1e;
 }
 
-.top-section__title b {
+.top-section__title .text-render {
   color: #4a8db2;
+  font-weight: 700;
 }
 
 .top-section__text {
@@ -13443,6 +13444,17 @@ hr.style-two {
   }
   .order-section__description {
     text-align: left;
+  }
+}
+
+.block-calendar {
+  width: 100%;
+  max-width: 380px;
+}
+
+@media screen and (max-width: 991px) {
+  .block-calendar {
+    margin: 0 auto;
   }
 }
 

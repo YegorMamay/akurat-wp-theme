@@ -7,8 +7,9 @@
   &__title {
     color: $themeColorOne;
 
-    & b {
+    & .text-render {
       color: $accent_color_3;
+      font-weight: 700;
     }
   }
 
@@ -534,5 +535,16 @@
     &__description {
       text-align: left;
     }
+  }
+}
+
+.block-calendar {
+  width: 100%;
+  max-width: 380px;
+}
+
+@media screen and (max-width: 991px) {
+  .block-calendar {
+    margin: 0 auto;
   }
 }

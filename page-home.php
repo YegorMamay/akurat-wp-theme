@@ -14,10 +14,26 @@
     <section class="top-section" style="background: url('<?php echo $attachment_image; ?>') no-repeat center / cover">
         <div class="container">
             <div class="top-section__description">
-                <h1 class="top-section__title h1"><?php echo get_post_meta(get_the_ID(), 'first_screen_title', true); ?></h1>
+                <h1 class="top-section__title h1" id="dynamic-text"><?php echo get_post_meta(get_the_ID(), 'first_screen_title', true); ?></h1>
                 <div class="top-section__text"><?php echo get_post_meta(get_the_ID(), 'first_screen_description', true); ?></div>
                 <a href="#about" type="button" class="btn btn-primary top-section__button"><?php pll_e('button_info'); ?></a>
             </div>
+            <script>
+                if(document.querySelectorAll('#dynamic-text .text-render').length > 0) {
+                    var typed = new Typed('#dynamic-text .text-render', {
+                        strings: ['<?php echo get_post_meta(get_the_ID(), 'dynamic_text_1', true); ?>',
+                            '<?php echo get_post_meta(get_the_ID(), 'dynamic_text_2', true); ?>',
+                            '<?php echo get_post_meta(get_the_ID(), 'dynamic_text_3', true); ?>'],
+                        typeSpeed: 50,
+                        backSpeed: 50,
+                        startDelay: 2000,
+                        backDelay: 5000,
+                        fadeOut: true,
+                        loop: true,
+                        cursorChar: '',
+                    });
+                }
+            </script>
         </div>
     </section>
     <section class="block-about" id="about">
@@ -156,18 +172,20 @@
     $order_block = get_post_meta(get_the_ID(), 'order_image', true);
     $order_block_image = wp_get_attachment_url($order_block);
     ?>
-    <section class="order-section" id="order" style="background: url('<?php echo $order_block_image; ?>')">
+    <section class="order-section" id="order" style="background: url('<?php echo $order_block_image; ?>') no-repeat center/cover">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-12 col-lg-5 col-xl-4">
+                <div class="col-12 col-lg-5 col-xl-5">
                     <div class="order-section__title"><?php echo get_post_meta(get_the_ID(), 'order_title', true) ?></div>
                     <div class="order-section__sub-title"><?php echo get_post_meta(get_the_ID(), 'order_sub_title', true) ?></div>
                 </div>
-                <div class="col-12 col-lg-7 col-xl-8">
+                <div class="col-12 col-lg-7 col-xl-7">
                     <div class="order-section__description">
                         <?php echo get_post_meta(get_the_ID(), 'order_title_right_column', true) ?>
                     </div>
-                    <?php echo do_shortcode('[booked-calendar]'); ?>
+                    <div class="block-calendar">
+                        <?php echo do_shortcode('[booked-calendar]'); ?>
+                    </div>
                 </div>
             </div>
         </div>

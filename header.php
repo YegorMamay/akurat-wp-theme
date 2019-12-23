@@ -11,6 +11,7 @@
     <link rel="icon" href="<?php echo esc_url(get_template_directory_uri() . '/assets/img/favicon.ico'); ?>"
           type="image/x-icon">
     <?php wp_head(); ?>
+    <script type="text/javascript" src="/wp-content/themes/brainworks/assets/js/typed.min.js"></script>
 </head>
 <body <?php body_class(); ?> id="top">
 
@@ -33,7 +34,7 @@
                             ])
                             ?>
                         </div>
-                        <?php if (function_exists('pll_the_languages')) { ?>
+                        <?php /* if (function_exists('pll_the_languages')) { ?>
                             <ul class="lang">
                                 <?php pll_the_languages(array(
                                     'show_flags' => 0,
@@ -42,7 +43,7 @@
                                     'display_names_as' => 'name'
                                 )); ?>
                             </ul>
-                        <?php } ?>
+                        <?php } */ ?>
                     </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
