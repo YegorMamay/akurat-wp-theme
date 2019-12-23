@@ -146,7 +146,7 @@
             'depth' => 3
         )); ?>
             <div class="mobile-language">
-                <?php if (function_exists('pll_the_languages')) { ?>
+                <?php /* if (function_exists('pll_the_languages')) { ?>
                     <ul class="lang">
                         <?php pll_the_languages(array(
                             'show_flags' => 0,
@@ -155,7 +155,7 @@
                             'display_names_as' => 'name'
                         )); ?>
                     </ul>
-                <?php } ?>
+                <?php } */ ?>
             </div>
             <div class="mobile-phones">
                 <?php echo do_shortcode('[bw-phone]'); ?>
