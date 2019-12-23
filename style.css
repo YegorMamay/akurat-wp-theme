@@ -13443,7 +13443,7 @@ hr.style-two {
     margin-bottom: 0;
   }
   .order-section__description {
-    text-align: left;
+    max-width: 380px;
   }
 }
 
