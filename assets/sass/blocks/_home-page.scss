@@ -560,4 +560,9 @@
 
 .slider {
   padding: 8% 0;
+  &__link {
+    &:hover, &:focus {
+      color: $themeColorOne;
+    }
+  }
 }

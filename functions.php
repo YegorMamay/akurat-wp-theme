@@ -50,6 +50,7 @@ add_action( 'after_setup_theme', function () {
         pll_register_string( 'button_text_order', 'button_text_order', 'Brainworks' );
         pll_register_string( 'text_image_before', 'text_image_before', 'Brainworks' );
         pll_register_string( 'text_image_after', 'text_image_after', 'Brainworks' );
+        pll_register_string( 'text_more_example', 'text_more_example', 'Brainworks' );
     }
 } );
 

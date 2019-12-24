@@ -13492,6 +13492,10 @@ hr.style-two {
   padding: 8% 0;
 }
 
+.slider__link:hover, .slider__link:focus {
+  color: #1b1d1e;
+}
+
 .tab-wrapper {
   padding: 5% 0;
 }

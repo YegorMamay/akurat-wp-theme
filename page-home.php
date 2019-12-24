@@ -127,6 +127,9 @@
         <div class="container">
             <h2 class="main-title main-title--centered h2"><?php echo get_post_meta(get_the_ID(), 'work_example', true); ?></h2>
             <?php  get_template_part('loops/content', 'home'); ?>
+            <div class="text-center">
+                <a href="<?php echo get_permalink(350); ?>" class="btn btn-primary slider__link"><?php pll_e('text_more_example'); ?></a>
+            </div>
         </div>
     </section>
     <section class="benefits-section" id="benefits">
