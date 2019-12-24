@@ -13458,6 +13458,10 @@ hr.style-two {
   }
 }
 
+.slider {
+  padding: 8% 0;
+}
+
 .tab-wrapper {
   padding: 5% 0;
 }

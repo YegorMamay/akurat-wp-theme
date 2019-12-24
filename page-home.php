@@ -6,7 +6,6 @@
 
 <?php get_header(); ?>
 <div class="content">
-    <?php get_template_part('loops/content', 'home'); ?>
     <?php
     $attachment_elem_id = get_post_meta(get_the_ID(), 'first_screen_image', true);
     $attachment_image = wp_get_attachment_url($attachment_elem_id);
@@ -122,6 +121,12 @@
                 <button type="button" class="btn btn-primary block-special__button js-order-1"><?php pll_e('button_text_order'); ?></button>
             </div>
         </div>
+        </div>
+    </section>
+    <section class="slider">
+        <div class="container">
+            <h2 class="main-title main-title--centered h2"><?php echo get_post_meta(get_the_ID(), 'work_example', true); ?></h2>
+            <?php  get_template_part('loops/content', 'home'); ?>
         </div>
     </section>
     <section class="benefits-section" id="benefits">
