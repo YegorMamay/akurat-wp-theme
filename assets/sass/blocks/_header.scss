@@ -7,4 +7,22 @@
 .page-header {
     background-color: $headerBgColor;
     color: $headerFontColor;
+    box-shadow: $header_box_shadow;
+    &.fixed-to-top {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 10000000000;
+    }
+}
+
+.wrapper {
+    padding-top: 135px;
+}
+
+@media screen and (max-width: 1140px) {
+    .wrapper {
+        padding-top: 60px;
+    }
 }

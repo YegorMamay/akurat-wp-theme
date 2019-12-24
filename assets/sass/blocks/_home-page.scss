@@ -541,6 +541,15 @@
 .block-calendar {
   width: 100%;
   max-width: 380px;
+  position: relative;
+  z-index: 50;
+  min-height: 400px;
+  & .booked-calendar-shortcode-wrap {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
 }
 
 @media screen and (max-width: 991px) {

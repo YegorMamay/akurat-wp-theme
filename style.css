@@ -12039,6 +12039,26 @@ hr.style-two {
 .page-header {
   background-color: #fff;
   color: #1b1d1e;
+  -webkit-box-shadow: 0 8px 4px -3px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 4px -3px rgba(0, 0, 0, 0.15);
+}
+
+.page-header.fixed-to-top {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10000000000;
+}
+
+.wrapper {
+  padding-top: 135px;
+}
+
+@media screen and (max-width: 1140px) {
+  .wrapper {
+    padding-top: 60px;
+  }
 }
 
 .nav {
@@ -13450,6 +13470,16 @@ hr.style-two {
 .block-calendar {
   width: 100%;
   max-width: 380px;
+  position: relative;
+  z-index: 50;
+  min-height: 400px;
+}
+
+.block-calendar .booked-calendar-shortcode-wrap {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 @media screen and (max-width: 991px) {
@@ -13740,9 +13770,15 @@ img {
 }
 
 .kama_breadcrumbs {
-  padding: 10px 0;
+  padding: 18px 0;
   font-size: 14px;
   margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1140px) {
+  .kama_breadcrumbs {
+    padding: 10px 0;
+  }
 }
 
 .page-name {
