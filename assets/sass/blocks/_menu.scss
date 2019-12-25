@@ -99,8 +99,8 @@
         &::after {
           content: "";
           position: absolute;
-          top: 21px;
-          right: 8px;
+          top: 26px;
+          right: 5px;
           border: 5px solid $menuFontColor;
           border-color: $menuFontColor transparent transparent transparent;
         }
@@ -139,6 +139,7 @@
       text-decoration: none;
       border-bottom: 3px solid transparent;
       @extend %smooth_animation;
+
       &:hover {
         border-color: $accent_color;
       }
@@ -152,11 +153,11 @@
     left: 0;
     z-index: 33;
     width: 250px;
-    background-color: $menuBgColorActive;
+    background-color: $primary_color_1;
     visibility: hidden;
     text-align: left;
     opacity: 0;
-    box-shadow: 0 5px 20px rgba(#000, .2);
+    box-shadow: 0 5px 20px rgba(#000, .15);
     @extend %smooth_animation;
 
     &-item {
@@ -187,8 +188,8 @@
       .no-touch &:hover,
       &-current {
         > .sub-menu-link {
-          background-color: $menuMobileSubMenuBGOnHover;
-          color: $menuFontColorActive;
+          background-color: $accent_color_2;
+          color: $primary_color_1;
         }
       }
 
@@ -205,8 +206,8 @@
       display: block;
       padding: 9px 15px;
       color: $menuFontColor;
-      font-size: 14px;
-      line-height: 1.3;
+      font-size: 18px;
+      line-height: normal;
       text-decoration: none;
       @extend %smooth_animation;
     }

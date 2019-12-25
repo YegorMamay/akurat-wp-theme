@@ -83,7 +83,7 @@
 
         .menu-item-has-children-arrow {
           position: absolute;
-          top: 5px;
+          top: 7px;
           right: 10px;
           z-index: 1;
           display: block;
@@ -131,7 +131,7 @@
       width: auto;
       display: none;
       visibility: visible;
-      background-color: $menuMobileSubMenuBGColor;
+      background-color: $primary_color_1;
       opacity: 1;
       box-shadow: none;
       transition: none;
@@ -155,8 +155,8 @@
       }
 
       &-link {
-        color: $menuMobileSubMenuTextColor;
-        font-size: $menuMobileSubMenuLinkFontSize;
+        color: $primary_color_2;
+        font-size: 18px;
       }
     }
   }
