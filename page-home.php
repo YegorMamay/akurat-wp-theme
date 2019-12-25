@@ -259,7 +259,7 @@
         <div class="container">
             <div class="blog-section">
                 <h2 class="main-title h2"><?php echo get_post_meta(get_the_ID(), 'news_title', true); ?></h2>
-                <?php $page_id = 52; ?>
+                <?php $page_id = 56; ?>
                 <a href="<?php echo get_permalink(pll_get_post($page_id)); ?>" class="btn btn-secondary blog-section__button"><?php pll_e('articles_button_text'); ?></a>
             </div>
             <?php echo do_shortcode('[bw-advert count=3 class=front-news]'); ?>
