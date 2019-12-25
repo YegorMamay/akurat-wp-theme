@@ -6,6 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="<?php bloginfo('name'); ?> - <?php bloginfo('description'); ?>">
+    
+    <!-- OpenGraph -->
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:locale:alternate" content="ru_RU" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="<?php if ( is_front_page() ) {echo bloginfo('name');} else { echo single_post_title(); } ?>" />
+    <meta property="og:description" content="<?php bloginfo('description'); ?>">
+    <meta property="og:url" content="<?php echo esc_url(site_url()); ?>" />
+    <meta property="og:site_name" content="<?php bloginfo('name'); ?>" />
+    <meta property="og:image" content="<?php echo esc_url(the_post_thumbnail_url()); ?>" />
+    <meta property="og:image:secure_url" content="<?php echo esc_url(the_post_thumbnail_url()); ?>" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="628" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="<?php bloginfo('name'); ?> | <?php bloginfo('description'); ?>" />
+    <meta name="twitter:image" content="<?php echo esc_url(the_post_thumbnail_url()); ?>" />
+    <!-- OpenGraph end-->
+    
     <link rel="shortcut icon" href="<?php echo esc_url(get_template_directory_uri() . '/assets/img/favicon.ico'); ?>"
           type="image/x-icon">
     <link rel="icon" href="<?php echo esc_url(get_template_directory_uri() . '/assets/img/favicon.ico'); ?>"
