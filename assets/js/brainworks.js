@@ -186,8 +186,15 @@ var scrollToElement = function scrollToElement() {
                         e.preventDefault();
                         var target$ = $(href[0] === "#" ? href : href.slice(1));
                         if (target$.length) {
+                            var fixNav;
+                            if($(window).width() > 1140) {
+                                fixNav = $('.js-nav-desktop').outerHeight();
+                            } else {
+                                fixNav = $('.js-nav-mobile').outerHeight();
+                            }
+
                             $("html, body").animate({
-                                scrollTop: target$.offset().top
+                                scrollTop: target$.offset().top - fixNav
                             }, animationSpeed);
                         } else if (href[0] === "/") {
                             location.href = href;

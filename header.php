@@ -36,7 +36,7 @@
 <?php wp_body_open(); ?>
 <div class="wrapper js-container"><!--Do not delete!-->
 
-    <header class="page-header fixed-to-top hide-on-mobile">
+    <header class="page-header fixed-to-top hide-on-mobile js-nav-desktop">
         <div class="container">
             <div class="row align-items-center v-padding">
                 <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
@@ -132,7 +132,7 @@
     </header>
 
     <!-- Mobile menu start-->
-    <div class="nav-mobile-header">
+    <div class="nav-mobile-header js-nav-mobile">
         <div class="logo">
             <?php get_default_logo_link([
                 'name'    => 'logo-white.svg',

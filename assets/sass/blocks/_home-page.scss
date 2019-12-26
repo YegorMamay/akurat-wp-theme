@@ -30,7 +30,7 @@
 
 @media screen and (max-width: 991px) {
   .top-section {
-    min-height: 420px;
+    min-height: 500px;
     justify-content: center;
 
     &__title {
@@ -397,6 +397,7 @@
     position: absolute;
     left: 25px;
     top: 20px;
+    padding-top: 3px;
   }
 
   &__item {

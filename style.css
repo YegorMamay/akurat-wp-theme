@@ -12904,7 +12904,7 @@ hr.style-two {
 
 @media screen and (max-width: 991px) {
   .top-section {
-    min-height: 420px;
+    min-height: 500px;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -13349,6 +13349,7 @@ hr.style-two {
   position: absolute;
   left: 25px;
   top: 20px;
+  padding-top: 3px;
 }
 
 .bottom-section__item {
