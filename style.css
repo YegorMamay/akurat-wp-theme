@@ -13420,6 +13420,7 @@ hr.style-two {
 }
 
 .order-section {
+  background: #f4f5fa;
   min-height: 350px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13427,7 +13428,11 @@ hr.style-two {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 3% 0;
+  padding: 4% 0;
+}
+
+.order-section__wrapper {
+  position: relative;
 }
 
 .order-section__title {
@@ -13450,6 +13455,25 @@ hr.style-two {
   text-align: center;
 }
 
+.order-section__image {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+@media screen and (min-width: 1200px) {
+  .order-section__title {
+    margin-top: 25%;
+  }
+}
+
+@media screen and (max-width: 1270px) {
+  .order-section__image {
+    display: none;
+  }
+}
+
 @media screen and (min-width: 992px) {
   .order-section {
     min-height: 700px;
@@ -13468,18 +13492,11 @@ hr.style-two {
 }
 
 .block-calendar {
+  background: #f4f5fa;
   width: 100%;
   max-width: 380px;
   position: relative;
-  z-index: 50;
-  min-height: 400px;
-}
-
-.block-calendar .booked-calendar-shortcode-wrap {
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
+  z-index: 5;
 }
 
 @media screen and (max-width: 991px) {

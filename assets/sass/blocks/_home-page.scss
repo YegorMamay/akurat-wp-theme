@@ -492,10 +492,15 @@
 }
 
 .order-section {
+  background: $light_bg_color;
   min-height: 350px;
   display: flex;
   align-items: center;
-  padding: 3% 0;
+  padding: 4% 0;
+
+  &__wrapper {
+    position: relative;
+  }
 
   &__title {
     font-size: 26px;
@@ -515,6 +520,30 @@
     color: $dots_color;
     margin-bottom: 15px;
     text-align: center;
+  }
+
+  &__image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+
+}
+
+@media screen and (min-width: 1200px) {
+  .order-section {
+    &__title {
+      margin-top: 25%;
+    }
+  }
+}
+
+@media screen and (max-width: 1270px) {
+  .order-section {
+    &__image {
+      display: none;
+    }
   }
 }
 
@@ -539,17 +568,11 @@
 }
 
 .block-calendar {
+  background: $light_bg_color;
   width: 100%;
   max-width: 380px;
   position: relative;
-  z-index: 50;
-  min-height: 400px;
-  & .booked-calendar-shortcode-wrap {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
+  z-index: 5;
 }
 
 @media screen and (max-width: 991px) {
@@ -560,6 +583,7 @@
 
 .slider {
   padding: 8% 0;
+
   &__link {
     &:hover, &:focus {
       color: $themeColorOne;

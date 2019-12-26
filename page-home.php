@@ -176,23 +176,26 @@
             </div>
         </div>
     </section>
-    <?php
-    $order_block = get_post_meta(get_the_ID(), 'order_image', true);
-    $order_block_image = wp_get_attachment_url($order_block);
-    ?>
-    <section class="order-section" id="order" style="background: url('<?php echo $order_block_image; ?>') no-repeat center/cover">
+    <section class="order-section" id="order">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row">
                 <div class="col-12 col-lg-5 col-xl-5">
                     <div class="order-section__title"><?php echo get_post_meta(get_the_ID(), 'order_title', true) ?></div>
                     <div class="order-section__sub-title"><?php echo get_post_meta(get_the_ID(), 'order_sub_title', true) ?></div>
                 </div>
                 <div class="col-12 col-lg-7 col-xl-7">
-                    <div class="order-section__description">
-                        <?php echo get_post_meta(get_the_ID(), 'order_title_right_column', true) ?>
-                    </div>
-                    <div class="block-calendar">
-                        <?php echo do_shortcode('[booked-calendar]'); ?>
+                    <div class="order-section__wrapper">
+                        <div class="order-section__description">
+                            <?php echo get_post_meta(get_the_ID(), 'order_title_right_column', true) ?>
+                        </div>
+                        <div class="block-calendar">
+                            <?php echo do_shortcode('[booked-calendar]'); ?>
+                        </div>
+                        <?php
+                        $order_block = get_post_meta(get_the_ID(), 'order_image', true);
+                        $order_block_image = wp_get_attachment_url($order_block);
+                        ?>
+                        <img class="order-section__image" src="<?php echo $order_block_image; ?>">
                     </div>
                 </div>
             </div>
