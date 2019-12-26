@@ -51,7 +51,7 @@
     <div class="footer__bottom-section">
         <div class="container">
             <div class="copyright">
-                <div class="date"><span class="date__symbol">&copy;</span><?php echo date('Y'); ?>. Все права защищены</div>
+                <div class="date"><span class="date__symbol">&copy;</span><?php echo date('Y'); ?>. Всі права захищені</div>
                 <div class="developer">
                     <?php pll_e('text_developer'); ?><a href="https://brainworks.pro/" target="_blank">BrainWorks</a>
                 </div>

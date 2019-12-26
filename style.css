@@ -12730,13 +12730,20 @@ hr.style-two {
 
 .copyright .date {
   color: rgba(255, 255, 255, 0.42);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .copyright .date__symbol {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: baseline;
   margin-right: 4px;
-  margin-top: -3px;
+  margin-top: -5px;
+  line-height: 0;
 }
 
 .copyright a {
