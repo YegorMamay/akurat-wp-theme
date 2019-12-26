@@ -123,6 +123,12 @@
 
   & .date {
     color: $text_date_color;
+    &__symbol {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 4px;
+      margin-top: -3px;
+    }
   }
 
   a {

@@ -12723,6 +12723,13 @@ hr.style-two {
   color: rgba(255, 255, 255, 0.42);
 }
 
+.copyright .date__symbol {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 4px;
+  margin-top: -3px;
+}
+
 .copyright a {
   color: #a1e1f7;
   text-decoration: underline;
@@ -13328,7 +13335,7 @@ hr.style-two {
   background: #a1e1f7;
   color: #fff;
   font-size: 20px;
-  line-height: 20px;
+  line-height: 38px;
   font-weight: 700;
   display: -webkit-box;
   display: -ms-flexbox;
