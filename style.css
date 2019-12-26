@@ -8616,6 +8616,15 @@ html.pum-open.pum-open-overlay.pum-open-scrollable .pum-overlay.pum-active {
   overflow-y: hidden;
 }
 
+@media screen and (min-width: 1140px) {
+  html.pum-open.pum-open-overlay body {
+    overflow-y: scroll;
+  }
+  html.pum-open.pum-open-overlay .page-header.fixed-to-top {
+    overflow-y: scroll;
+  }
+}
+
 .slick-slider {
   position: relative;
   display: block;
