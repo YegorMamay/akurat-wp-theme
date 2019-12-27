@@ -13500,6 +13500,7 @@ hr.style-two {
 
 @media screen and (min-width: 992px) {
   .order-section {
+    overflow: hidden;
     min-height: 700px;
   }
   .order-section__title {

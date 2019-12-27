@@ -550,6 +550,7 @@
 
 @media screen and (min-width: 992px) {
   .order-section {
+    overflow: hidden;
     min-height: 700px;
 
     &__title {
