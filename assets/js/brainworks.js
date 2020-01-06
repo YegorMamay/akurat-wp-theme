@@ -269,9 +269,15 @@ var scrollToElement = function scrollToElement() {
             $(this).addClass("active");
             $("#" + tabsData).addClass("active");
             $("html, body").animate({
-                scrollTop: $("#service").offset().top
+                scrollTop: $("#service").offset().top - 110
             }, 300);
         });
+        if($(window).width() < 1024) {
+            $('.tabs__mobile-item').removeClass('active');
+            $('.tabs__content').removeClass('active');
+            $('.tabs__content:last-child').prev().addClass('active');
+            $('.tabs__content:last-child').addClass('active');
+        }
         mobileItem.on("click", function() {
             $(this).toggleClass("active");
             $(".tabs__mobile-item").not($(this)).removeClass("active");
