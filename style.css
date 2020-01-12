@@ -127,7 +127,7 @@ q:after {
   content: none;
 }
 
-.btn, .review-social, .review-slider .slick-arrow, .slick-dots li, .slick-dots li.slick-active, .slick-dots li.slick-active button, .slick-dots li button, a, .phone-dropdown__button:after, .phone-dropdown__button.active:after, .nav .menu-link, .nav .sub-menu, .nav .sub-menu-link, .pre-footer .social-item:hover i, .pre-footer .social i, .pre-footer .messenger-item:hover i, .pre-footer .messenger i, .copyright a, .copyright a:hover, .top-menu__item .social-item:hover i, .top-menu__item .messenger-item:hover i, .tabs__mobile-item, .tabs__mobile-item.active, .tabs__item, .tabs__item.active, .tabs__item:hover, .tabs__content, .tabs__content.active, .svg-icon {
+.btn, .review-social, .review-slider .slick-arrow, .slick-dots li, .slick-dots li.slick-active, .slick-dots li.slick-active button, .slick-dots li button, a, .phone-dropdown__button:after, .phone-dropdown__button.active:after, .nav .menu-link, .nav .sub-menu, .nav .sub-menu-link, .pre-footer .social-item:hover i, .pre-footer .social i, .pre-footer .messenger-item:hover i, .pre-footer .messenger i, .copyright a, .copyright a:hover, .top-menu__item .social-item:hover i, .top-menu__item .messenger-item:hover i, .custom-buttons__arrow, .custom-buttons__icon, .tabs__mobile-item, .tabs__mobile-item.active, .tabs__item, .tabs__item.active, .tabs__item:hover, .tabs__content, .tabs__content.active, .svg-icon {
   -webkit-transition: .2s;
   transition: .2s;
 }
@@ -9239,7 +9239,7 @@ table th[class*="col-"] {
   clear: both;
 }
 
-.btn, .review-social, .review-slider .slick-arrow, .slick-dots li, .slick-dots li.slick-active, .slick-dots li.slick-active button, .slick-dots li button, a, .phone-dropdown__button:after, .phone-dropdown__button.active:after, .nav .menu-link, .nav .sub-menu, .nav .sub-menu-link, .pre-footer .social-item:hover i, .pre-footer .social i, .pre-footer .messenger-item:hover i, .pre-footer .messenger i, .copyright a, .copyright a:hover, .top-menu__item .social-item:hover i, .top-menu__item .messenger-item:hover i, .tabs__mobile-item, .tabs__mobile-item.active, .tabs__item, .tabs__item.active, .tabs__item:hover, .tabs__content, .tabs__content.active, .svg-icon {
+.btn, .review-social, .review-slider .slick-arrow, .slick-dots li, .slick-dots li.slick-active, .slick-dots li.slick-active button, .slick-dots li button, a, .phone-dropdown__button:after, .phone-dropdown__button.active:after, .nav .menu-link, .nav .sub-menu, .nav .sub-menu-link, .pre-footer .social-item:hover i, .pre-footer .social i, .pre-footer .messenger-item:hover i, .pre-footer .messenger i, .copyright a, .copyright a:hover, .top-menu__item .social-item:hover i, .top-menu__item .messenger-item:hover i, .custom-buttons__arrow, .custom-buttons__icon, .tabs__mobile-item, .tabs__mobile-item.active, .tabs__item, .tabs__item.active, .tabs__item:hover, .tabs__content, .tabs__content.active, .svg-icon {
   -webkit-transition: .2s;
   transition: .2s;
 }
@@ -9834,7 +9834,7 @@ select {
   }
 }
 
-.btn, .review-social, .review-slider .slick-arrow, .slick-dots li, .slick-dots li.slick-active, .slick-dots li.slick-active button, .slick-dots li button, a, .phone-dropdown__button:after, .phone-dropdown__button.active:after, .nav .menu-link, .nav .sub-menu, .nav .sub-menu-link, .pre-footer .social-item:hover i, .pre-footer .social i, .pre-footer .messenger-item:hover i, .pre-footer .messenger i, .copyright a, .copyright a:hover, .top-menu__item .social-item:hover i, .top-menu__item .messenger-item:hover i, .tabs__mobile-item, .tabs__mobile-item.active, .tabs__item, .tabs__item.active, .tabs__item:hover, .tabs__content, .tabs__content.active, .svg-icon {
+.btn, .review-social, .review-slider .slick-arrow, .slick-dots li, .slick-dots li.slick-active, .slick-dots li.slick-active button, .slick-dots li button, a, .phone-dropdown__button:after, .phone-dropdown__button.active:after, .nav .menu-link, .nav .sub-menu, .nav .sub-menu-link, .pre-footer .social-item:hover i, .pre-footer .social i, .pre-footer .messenger-item:hover i, .pre-footer .messenger i, .copyright a, .copyright a:hover, .top-menu__item .social-item:hover i, .top-menu__item .messenger-item:hover i, .custom-buttons__arrow, .custom-buttons__icon, .tabs__mobile-item, .tabs__mobile-item.active, .tabs__item, .tabs__item.active, .tabs__item:hover, .tabs__content, .tabs__content.active, .svg-icon {
   -webkit-transition: .2s;
   transition: .2s;
 }
@@ -13553,6 +13553,100 @@ hr.style-two {
 
 .booked-modal {
   z-index: 100000000000000000 !important;
+}
+
+.custom-buttons {
+  width: 100%;
+  position: absolute;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 0;
+  top: 42%;
+  z-index: 100;
+}
+
+.custom-buttons__arrow {
+  background: transparent;
+  border: none;
+  width: 30px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.custom-buttons__arrow:hover {
+  background: transparent;
+}
+
+.custom-buttons__arrow.js-arrow-prev {
+  position: absolute;
+  left: -10%;
+  top: 0;
+}
+
+.custom-buttons__arrow.js-arrow-next {
+  position: absolute;
+  right: -10%;
+  top: 0;
+}
+
+.custom-buttons__icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  stroke: #cccdd1 !important;
+  fill: #cccdd1 !important;
+}
+
+.custom-buttons__icon:hover {
+  stroke: #74bedd !important;
+  fill: #74bedd !important;
+}
+
+@media screen and (max-width: 1200px) {
+  .custom-buttons__arrow.js-arrow-next {
+    right: -35px;
+  }
+  .custom-buttons__arrow.js-arrow-prev {
+    left: -35px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .custom-buttons {
+    top: 38%;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .custom-buttons {
+    top: 31%;
+  }
+  .custom-buttons__arrow.js-arrow-next {
+    right: 0;
+  }
+  .custom-buttons__arrow.js-arrow-prev {
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .custom-buttons {
+    top: 30%;
+  }
+}
+
+.borders {
+  overflow: visible !important;
 }
 
 .tab-wrapper {
