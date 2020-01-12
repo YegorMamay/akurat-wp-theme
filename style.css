@@ -12931,6 +12931,19 @@ hr.style-two {
   .top-section__title br {
     display: none;
   }
+  .top-section .text-render {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 76px;
+    overflow: hidden;
+  }
   .top-section__text {
     text-align: center;
   }
@@ -13536,6 +13549,10 @@ hr.style-two {
 
 .slider__link:hover, .slider__link:focus {
   color: #1b1d1e;
+}
+
+.booked-modal {
+  z-index: 100000000000000000 !important;
 }
 
 .tab-wrapper {

@@ -41,6 +41,14 @@
       }
     }
 
+    & .text-render {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 76px;
+      overflow: hidden;
+    }
+
     &__text {
       text-align: center;
     }
@@ -591,4 +599,8 @@
       color: $themeColorOne;
     }
   }
+}
+
+.booked-modal {
+  z-index: 100000000000000000!important;
 }
