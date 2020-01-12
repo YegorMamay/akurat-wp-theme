@@ -13019,6 +13019,20 @@ hr.style-two {
   font-size: 20px;
 }
 
+@media screen and (max-width: 767px) {
+  .block-about__container {
+    min-height: auto;
+    padding-bottom: 15px;
+    padding-top: 10px;
+  }
+  .block-about__title {
+    font-size: 36px;
+  }
+  .block-about__item {
+    margin-bottom: 15px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .block-about__item {
     width: 50%;
@@ -13639,6 +13653,14 @@ hr.style-two {
 
 .borders {
   overflow: visible !important;
+}
+
+.booked-modal .field #submit-request-appointment {
+  width: auto;
+}
+
+.booked-modal .field button.cancel {
+  width: auto;
 }
 
 .tab-wrapper {
